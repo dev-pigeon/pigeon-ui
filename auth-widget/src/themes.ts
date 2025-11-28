@@ -10,19 +10,20 @@ type ThemeDict = {
 // add these: border radius / color, dynamic sizing
 const modernContainer : React.CSSProperties = {
     display : "flex",
-    justifyContent:"center",
+    justifyContent:"space-around",
     alignItems:"flex-start",
     flexDirection : "column",
-    gap : '2px',
     padding : '10px',
     background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)',
-    color : "white"
+    color : "white",
+    minWidth:"500px",
+    gap : "20px"
 }
 
 
 const modernTitle : React.CSSProperties = {
     color: "white",
-      fontSize: "1.25rem",
+    fontSize: "1.25rem",
     fontWeight: "bold",
     margin:0,
     padding:0,
@@ -34,10 +35,43 @@ const modernSubtitle: React.CSSProperties = {
   padding:0,
 };
 
+const modernTabContainer: React.CSSProperties = {
+  width: "100%",
+  borderRadius: "8px",
+  display: "flex",
+  marginBottom: "24px",
+  flexFlow:"row nowrap",
+  backgroundColor: "#0f172a",
+};
+
+const modernTabButton: React.CSSProperties = {
+  flex: 1,
+  padding: "10px 16px",
+  backgroundColor: "transparent",
+  color: "#94a3b8",
+  borderRadius: "6px",
+  cursor: "pointer",
+  fontSize: "0.87rem",
+  fontWeight: "500",
+  transition: "all 0.2s ease",
+  margin: '0px 0px',
+  width :"40%"
+};
+
+
+const modernTabButtonActive: React.CSSProperties = {
+  ...modernTabButton,
+  backgroundColor: "#2563eb",
+  color: "white",
+};
+
 const modern : Theme = {
     "container" : modernContainer,
     "title" : modernTitle,
-    "subtitle" : modernSubtitle
+    "subtitle" : modernSubtitle,
+    "tabContainer" : modernTabContainer,
+    "tabButton" : modernTabButton,
+    "tabButtonActive" : modernTabButtonActive
 }
 
 export const themes : ThemeDict = {

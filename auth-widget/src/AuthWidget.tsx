@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { themes } from "./themes";
 
@@ -29,8 +29,29 @@ const SubTitle = styled.p<{ $styleString: string }>`
   ${(props) => props.$styleString}
 `;
 
+const TabContainer = styled.div<{ $styleString: string }>`
+  ${(props) => props.$styleString}
+`;
+
+const TabButton = styled.button<{ $styleString: string; $active: boolean }>`
+  ${(props) => props.$styleString}
+
+  &:hover {
+    background-color: ${(props) => (props.$active ? "#2563eb" : "#1e293b")};
+  }
+
+  transition: all 0.5s ease-in-out;
+
+  &:focus {
+    outline: 2px solid #3b82f6;
+  }
+`;
+
 const AuthWidget = ({ theme = "modern", title, subtitle }: AuthWidgetProps) => {
   const themeObject = themes[theme];
+  const [activeMode, setActiveMode] = useState<"login" | "signup" | "none">(
+    "none"
+  );
 
   return (
     <Container $styleString={cssPropertiesToString(themeObject["container"])}>
@@ -49,6 +70,33 @@ const AuthWidget = ({ theme = "modern", title, subtitle }: AuthWidgetProps) => {
           {subtitle || "Select an option to continue."}
         </SubTitle>
       </div>
+
+      <TabContainer
+        $styleString={cssPropertiesToString(themeObject["tabContainer"])}
+      >
+        <TabButton
+          $styleString={cssPropertiesToString(
+            activeMode === "login"
+              ? themeObject["tabButtonActive"]
+              : themeObject["tabButton"]
+          )}
+          $active={activeMode === "login"}
+          onClick={() => setActiveMode("login")}
+        >
+          Log In
+        </TabButton>
+        <TabButton
+          $styleString={cssPropertiesToString(
+            activeMode === "signup"
+              ? themeObject["tabButtonActive"]
+              : themeObject["tabButton"]
+          )}
+          $active={activeMode === "signup"}
+          onClick={() => setActiveMode("signup")}
+        >
+          Sign Up
+        </TabButton>
+      </TabContainer>
     </Container>
   );
 };
