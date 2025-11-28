@@ -19,13 +19,18 @@ const Container = styled.div<{ $styleString: string }>`
   ${(props) => props.$styleString}
 `;
 
+const Title = styled.p<{ $styleString: string }>`
+  ${(props) => props.$styleString}
+`;
+
 const AuthWidget = ({ theme = "modern" }: AuthWidgetProps) => {
   const themeObject = themes[theme];
 
   return (
     <Container $styleString={cssPropertiesToString(themeObject["container"])}>
-      <h2>Auth Widget</h2>
-      <p>This is your authentication widget</p>
+      <Title $styleString={cssPropertiesToString(themeObject["title"])}>
+        <p>Account Access</p>
+      </Title>
     </Container>
   );
 };

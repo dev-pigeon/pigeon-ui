@@ -11,19 +11,26 @@ type ThemeDict = {
 const modernContainer : React.CSSProperties = {
     display : "flex",
     justifyContent:"center",
-    alignItems:"center",
+    alignItems:"flex-start",
     flexDirection : "column",
     gap : 2,
-    padding : 1,
-    minWidth : 100,
-    minHeight : 100,
+    padding : '10px',
     background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)',
     color : "white"
 }
 
 
+const modernTitle : React.CSSProperties = {
+      color: "white",
+      fontSize: "1.25rem",
+      fontWeight: "bold",
+      marginBottom : "8px",
+}
+
+
 const modern : Theme = {
-    "container" : modernContainer
+    "container" : modernContainer,
+    "title" : modernTitle
 }
 
 
