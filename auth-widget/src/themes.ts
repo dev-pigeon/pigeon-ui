@@ -13,7 +13,7 @@ const modernContainer : React.CSSProperties = {
     justifyContent:"center",
     alignItems:"flex-start",
     flexDirection : "column",
-    gap : 2,
+    gap : '2px',
     padding : '10px',
     background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)',
     color : "white"
@@ -21,18 +21,24 @@ const modernContainer : React.CSSProperties = {
 
 
 const modernTitle : React.CSSProperties = {
-      color: "white",
+    color: "white",
       fontSize: "1.25rem",
-      fontWeight: "bold",
-      marginBottom : "8px",
+    fontWeight: "bold",
+    margin:0,
+    padding:0,
 }
 
+const modernSubtitle: React.CSSProperties = {
+  color: "#94a3b8",
+  margin:0,
+  padding:0,
+};
 
 const modern : Theme = {
     "container" : modernContainer,
-    "title" : modernTitle
+    "title" : modernTitle,
+    "subtitle" : modernSubtitle
 }
-
 
 export const themes : ThemeDict = {
     "modern" : modern
@@ -40,8 +46,6 @@ export const themes : ThemeDict = {
 
 /*
 components to make:
-1. Title
-2. subtitle
 3. button group for toggling sign up / login
 4. regular text box (username / email)
 5. password text box

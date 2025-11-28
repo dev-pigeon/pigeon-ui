@@ -5,6 +5,7 @@ import { themes } from "./themes";
 type AuthWidgetProps = {
   theme?: "modern" | "light" | "dark";
   title?: "string";
+  subtitle?: "string";
 };
 
 const cssPropertiesToString = (styles: React.CSSProperties): string => {
@@ -24,14 +25,30 @@ const Title = styled.p<{ $styleString: string }>`
   ${(props) => props.$styleString}
 `;
 
-const AuthWidget = ({ theme = "modern", title }: AuthWidgetProps) => {
+const SubTitle = styled.p<{ $styleString: string }>`
+  ${(props) => props.$styleString}
+`;
+
+const AuthWidget = ({ theme = "modern", title, subtitle }: AuthWidgetProps) => {
   const themeObject = themes[theme];
 
   return (
     <Container $styleString={cssPropertiesToString(themeObject["container"])}>
-      <Title $styleString={cssPropertiesToString(themeObject["title"])}>
-        <p>{title || "Account Access"}</p>
-      </Title>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "flex-start",
+        }}
+      >
+        <Title $styleString={cssPropertiesToString(themeObject["title"])}>
+          {title || "Account Access"}
+        </Title>
+        <SubTitle $styleString={cssPropertiesToString(themeObject["subtitle"])}>
+          {subtitle || "Select an option to continue."}
+        </SubTitle>
+      </div>
     </Container>
   );
 };
