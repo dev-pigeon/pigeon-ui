@@ -4,6 +4,7 @@ import { themes } from "./themes";
 
 type AuthWidgetProps = {
   theme?: "modern" | "light" | "dark";
+  title?: "string";
 };
 
 const cssPropertiesToString = (styles: React.CSSProperties): string => {
@@ -23,13 +24,13 @@ const Title = styled.p<{ $styleString: string }>`
   ${(props) => props.$styleString}
 `;
 
-const AuthWidget = ({ theme = "modern" }: AuthWidgetProps) => {
+const AuthWidget = ({ theme = "modern", title }: AuthWidgetProps) => {
   const themeObject = themes[theme];
 
   return (
     <Container $styleString={cssPropertiesToString(themeObject["container"])}>
       <Title $styleString={cssPropertiesToString(themeObject["title"])}>
-        <p>Account Access</p>
+        <p>{title || "Account Access"}</p>
       </Title>
     </Container>
   );
