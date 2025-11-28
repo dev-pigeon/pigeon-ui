@@ -7,6 +7,7 @@ type ThemeDict = {
 }
 
 
+// add these: border radius / color, dynamic sizing
 const modernContainer : React.CSSProperties = {
     display : "flex",
     justifyContent:"center",
@@ -29,3 +30,14 @@ const modern : Theme = {
 export const themes : ThemeDict = {
     "modern" : modern
 }
+
+/*
+components to make:
+1. Title
+2. subtitle
+3. button group for toggling sign up / login
+4. regular text box (username / email)
+5. password text box
+6. password eye
+7. submit button (logging and signing in)
+*/
