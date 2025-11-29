@@ -8,13 +8,17 @@ interface AuthWidgetBehaviors {
   handleEmail: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
+interface AuthWidgetState {
+  username: string;
+  email: string;
+}
+
 type AuthWidgetProps = {
   behavior: AuthWidgetBehaviors;
+  state: AuthWidgetState;
   theme?: "modern" | "light" | "dark";
   title?: string;
   subtitle?: string;
-  username: string;
-  email: string;
 };
 
 const cssPropertiesToString = (styles: React.CSSProperties): string => {
@@ -83,9 +87,8 @@ const AuthWidget = ({
   theme = "modern",
   title,
   subtitle,
-  username,
+  state,
   behavior,
-  email,
 }: AuthWidgetProps) => {
   const themeObject = themes[theme];
   const [activeMode, setActiveMode] = useState<"login" | "signup" | "none">(
@@ -149,7 +152,7 @@ const AuthWidget = ({
           <Input
             $styleString={cssPropertiesToString(themeObject["inputWithIcon"])}
             type="text"
-            value={email}
+            value={state.email}
             placeholder="Enter your email"
             onChange={behavior.handleEmail}
           />
@@ -177,7 +180,7 @@ const AuthWidget = ({
             $styleString={cssPropertiesToString(themeObject["inputWithIcon"])}
             type="text"
             placeholder="Enter your username"
-            value={username}
+            value={state.username}
             onChange={behavior.handleUsername}
           />
         </InputWrapper>

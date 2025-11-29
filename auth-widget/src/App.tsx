@@ -22,8 +22,7 @@ function App() {
     <>
       <AuthWidget
         behavior={{ handleEmail, handleUsername }}
-        username={username}
-        email={email}
+        state={{ username, email }}
       />
     </>
   );
