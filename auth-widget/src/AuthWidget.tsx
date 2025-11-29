@@ -1,16 +1,20 @@
-import React, { useState, type Dispatch } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { themes } from "./themes";
 import { Mail, Contact } from "lucide-react";
 
+interface AuthWidgetBehaviors {
+  handleUsername: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleEmail: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
 type AuthWidgetProps = {
+  behavior: AuthWidgetBehaviors;
   theme?: "modern" | "light" | "dark";
   title?: string;
   subtitle?: string;
   username: string;
-  handleUsername: (e: React.ChangeEvent<HTMLInputElement>) => void;
   email: string;
-  handleEmail: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const cssPropertiesToString = (styles: React.CSSProperties): string => {
@@ -80,9 +84,8 @@ const AuthWidget = ({
   title,
   subtitle,
   username,
-  handleUsername,
+  behavior,
   email,
-  handleEmail,
 }: AuthWidgetProps) => {
   const themeObject = themes[theme];
   const [activeMode, setActiveMode] = useState<"login" | "signup" | "none">(
@@ -148,7 +151,7 @@ const AuthWidget = ({
             type="text"
             value={email}
             placeholder="Enter your email"
-            onChange={handleEmail}
+            onChange={behavior.handleEmail}
           />
         </InputWrapper>
       </div>
@@ -175,7 +178,7 @@ const AuthWidget = ({
             type="text"
             placeholder="Enter your username"
             value={username}
-            onChange={handleUsername}
+            onChange={behavior.handleUsername}
           />
         </InputWrapper>
       </div>

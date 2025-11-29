@@ -12,7 +12,7 @@ function App() {
     }
   };
 
-  const handlEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target) {
       setEmail(e.target.value);
     }
@@ -21,10 +21,9 @@ function App() {
   return (
     <>
       <AuthWidget
+        behavior={{ handleEmail, handleUsername }}
         username={username}
-        handleUsername={handleUsername}
         email={email}
-        handleEmail={handlEmail}
       />
     </>
   );
