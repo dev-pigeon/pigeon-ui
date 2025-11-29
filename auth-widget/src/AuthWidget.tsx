@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, type Dispatch } from "react";
 import styled from "styled-components";
 import { themes } from "./themes";
+import { Mail, Contact } from "lucide-react";
 
 type AuthWidgetProps = {
   theme?: "modern" | "light" | "dark";
-  title?: "string";
-  subtitle?: "string";
+  title?: string;
+  subtitle?: string;
+  username: string;
+  handleUsername: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  email: string;
+  handleEmail: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const cssPropertiesToString = (styles: React.CSSProperties): string => {
@@ -47,7 +52,38 @@ const TabButton = styled.button<{ $styleString: string; $active: boolean }>`
   }
 `;
 
-const AuthWidget = ({ theme = "modern", title, subtitle }: AuthWidgetProps) => {
+const Input = styled.input<{ $styleString: string }>`
+  ${(props) => props.$styleString}
+
+  &::placeholder {
+    color: #64748b;
+    opacity: 1;
+  }
+
+  &:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 0;
+    border-color: #3b82f6;
+  }
+`;
+
+const InputWrapper = styled.div<{ $styleString: string }>`
+  ${(props) => props.$styleString}
+`;
+
+const IconWrapper = styled.div<{ $styleString: string }>`
+  ${(props) => props.$styleString}
+`;
+
+const AuthWidget = ({
+  theme = "modern",
+  title,
+  subtitle,
+  username,
+  handleUsername,
+  email,
+  handleEmail,
+}: AuthWidgetProps) => {
   const themeObject = themes[theme];
   const [activeMode, setActiveMode] = useState<"login" | "signup" | "none">(
     "none"
@@ -97,6 +133,52 @@ const AuthWidget = ({ theme = "modern", title, subtitle }: AuthWidgetProps) => {
           Sign Up
         </TabButton>
       </TabContainer>
+
+      <div style={{ width: "50%" }}>
+        <InputWrapper
+          $styleString={cssPropertiesToString(themeObject["inputWrapper"])}
+        >
+          <IconWrapper
+            $styleString={cssPropertiesToString(themeObject["inputIcon"])}
+          >
+            <Mail size={20} />
+          </IconWrapper>
+          <Input
+            $styleString={cssPropertiesToString(themeObject["inputWithIcon"])}
+            type="text"
+            value={email}
+            placeholder="Enter your email"
+            onChange={handleEmail}
+          />
+        </InputWrapper>
+      </div>
+
+      <div
+        style={{
+          width: "50%",
+          display: "flex",
+          flexDirection: "column",
+          gap: 0,
+          padding: 0,
+        }}
+      >
+        <InputWrapper
+          $styleString={cssPropertiesToString(themeObject["inputWrapper"])}
+        >
+          <IconWrapper
+            $styleString={cssPropertiesToString(themeObject["inputIcon"])}
+          >
+            <Contact size={20} />
+          </IconWrapper>
+          <Input
+            $styleString={cssPropertiesToString(themeObject["inputWithIcon"])}
+            type="text"
+            placeholder="Enter your username"
+            value={username}
+            onChange={handleUsername}
+          />
+        </InputWrapper>
+      </div>
     </Container>
   );
 };

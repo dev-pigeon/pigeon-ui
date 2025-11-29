@@ -17,7 +17,8 @@ const modernContainer : React.CSSProperties = {
     background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)',
     color : "white",
     minWidth:"500px",
-    gap : "20px"
+    gap : "20px",
+    borderRadius :"10px"
 }
 
 
@@ -65,14 +66,45 @@ const modernTabButtonActive: React.CSSProperties = {
   color: "white",
 };
 
+const modernInputWrapper: React.CSSProperties = {
+  position: "relative",
+  width: "100%",
+};
+
+const modernInputWithIcon: React.CSSProperties = {
+  backgroundColor: "#0f172a",
+  border: "1px solid #334155",
+  color: "white",
+  padding: "12px 12px 12px 40px", // Extra left padding for icon
+  borderRadius: "6px",
+  width: "100%",
+  fontSize: "1rem",
+};
+
+
+const modernInputIcon: React.CSSProperties = {
+    margin:"0px auto",
+    position: "absolute",
+    left: "12px",
+    top: "50%",
+    transform: "translateY(-50%)",
+    color: "#94a3b8",
+    pointerEvents: "none", // Icon won't block input clicks
+    height:"20px"
+};
+
 const modern : Theme = {
     "container" : modernContainer,
     "title" : modernTitle,
     "subtitle" : modernSubtitle,
     "tabContainer" : modernTabContainer,
     "tabButton" : modernTabButton,
-    "tabButtonActive" : modernTabButtonActive
+    "tabButtonActive" : modernTabButtonActive,
+    "inputWrapper" : modernInputWrapper,
+    "inputWithIcon" : modernInputWithIcon,
+    'inputIcon' : modernInputIcon,
 }
+
 
 export const themes : ThemeDict = {
     "modern" : modern
