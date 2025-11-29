@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { themes } from "./themes";
 import { Mail, Contact } from "lucide-react";
@@ -44,6 +44,13 @@ const SubTitle = styled.p<{ $styleString: string }>`
 
 const TabContainer = styled.div<{ $styleString: string }>`
   ${(props) => props.$styleString}
+`;
+
+const InputContainer = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 `;
 
 const TabButton = styled.button<{ $styleString: string; $active: boolean }>`
@@ -140,7 +147,7 @@ const AuthWidget = ({
         </TabButton>
       </TabContainer>
 
-      <div style={{ width: "50%" }}>
+      <InputContainer>
         <InputWrapper
           $styleString={cssPropertiesToString(themeObject["inputWrapper"])}
         >
@@ -157,17 +164,7 @@ const AuthWidget = ({
             onChange={behavior.handleEmail}
           />
         </InputWrapper>
-      </div>
 
-      <div
-        style={{
-          width: "50%",
-          display: "flex",
-          flexDirection: "column",
-          gap: 0,
-          padding: 0,
-        }}
-      >
         <InputWrapper
           $styleString={cssPropertiesToString(themeObject["inputWrapper"])}
         >
@@ -184,7 +181,7 @@ const AuthWidget = ({
             onChange={behavior.handleUsername}
           />
         </InputWrapper>
-      </div>
+      </InputContainer>
     </Container>
   );
 };
