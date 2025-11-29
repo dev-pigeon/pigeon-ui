@@ -6,19 +6,28 @@ type ThemeDict = {
     [key : string] : Theme
 }
 
-
-// add these: border radius / color, dynamic sizing
-const modernContainer : React.CSSProperties = {
+const modernCard : React.CSSProperties = {
     display : "flex",
     justifyContent:"space-around",
     alignItems:"flex-start",
     flexDirection : "column",
-    padding : '10px',
     background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)',
     color : "white",
-    minWidth:"500px",
-    gap : "20px",
-    borderRadius :"10px"
+    minWidth:"400px",
+    borderRadius :"10px",
+    padding : "20px",
+  }
+  
+  
+  // add these: border radius / color, dynamic sizing
+  const modernContainer : React.CSSProperties = {
+    display : "flex",
+    gap : "10px",
+    justifyContent:"space-around",
+    alignItems:"flex-start",
+    flexDirection : "column",
+    borderRadius :"10px",
+    width : "100%",
 }
 
 
@@ -94,6 +103,7 @@ const modernInputIcon: React.CSSProperties = {
 };
 
 const modern : Theme = {
+    'card' : modernCard,
     "container" : modernContainer,
     "title" : modernTitle,
     "subtitle" : modernSubtitle,

@@ -30,6 +30,10 @@ const cssPropertiesToString = (styles: React.CSSProperties): string => {
     .join("\n  ");
 };
 
+const Card = styled.div<{ $styleString: string }>`
+  ${(props) => props.$styleString}
+`;
+
 const Container = styled.div<{ $styleString: string }>`
   ${(props) => props.$styleString}
 `;
@@ -103,90 +107,94 @@ const AuthWidget = ({
   );
 
   return (
-    <Container $styleString={cssPropertiesToString(themeObject["container"])}>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          alignItems: "flex-start",
-        }}
-      >
-        <Title $styleString={cssPropertiesToString(themeObject["title"])}>
-          {title || "Account Access"}
-        </Title>
-        <SubTitle $styleString={cssPropertiesToString(themeObject["subtitle"])}>
-          {subtitle || "Select an option to continue."}
-        </SubTitle>
-      </div>
-
-      <TabContainer
-        $styleString={cssPropertiesToString(themeObject["tabContainer"])}
-      >
-        <TabButton
-          $styleString={cssPropertiesToString(
-            activeMode === "login"
-              ? themeObject["tabButtonActive"]
-              : themeObject["tabButton"]
-          )}
-          $active={activeMode === "login"}
-          onClick={() => setActiveMode("login")}
+    <Card $styleString={cssPropertiesToString(themeObject["card"])}>
+      <Container $styleString={cssPropertiesToString(themeObject["container"])}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+            alignItems: "flex-start",
+          }}
         >
-          Log In
-        </TabButton>
-        <TabButton
-          $styleString={cssPropertiesToString(
-            activeMode === "signup"
-              ? themeObject["tabButtonActive"]
-              : themeObject["tabButton"]
-          )}
-          $active={activeMode === "signup"}
-          onClick={() => setActiveMode("signup")}
-        >
-          Sign Up
-        </TabButton>
-      </TabContainer>
-
-      <InputContainer>
-        <InputWrapper
-          $styleString={cssPropertiesToString(themeObject["inputWrapper"])}
-        >
-          <IconWrapper
-            $styleString={cssPropertiesToString(themeObject["inputIcon"])}
+          <Title $styleString={cssPropertiesToString(themeObject["title"])}>
+            {title || "Account Access"}
+          </Title>
+          <SubTitle
+            $styleString={cssPropertiesToString(themeObject["subtitle"])}
           >
-            <Mail size={20} />
-          </IconWrapper>
-          <Input
-            $styleString={cssPropertiesToString(themeObject["inputWithIcon"])}
-            type="text"
-            value={state.email}
-            placeholder="Enter your email"
-            onChange={behavior.handleEmail}
-          />
-        </InputWrapper>
+            {subtitle || "Select an option to continue."}
+          </SubTitle>
+        </div>
 
-        <InputWrapper
-          $styleString={cssPropertiesToString(themeObject["inputWrapper"])}
+        <TabContainer
+          $styleString={cssPropertiesToString(themeObject["tabContainer"])}
         >
-          <IconWrapper
-            $styleString={cssPropertiesToString(themeObject["inputIcon"])}
+          <TabButton
+            $styleString={cssPropertiesToString(
+              activeMode === "login"
+                ? themeObject["tabButtonActive"]
+                : themeObject["tabButton"]
+            )}
+            $active={activeMode === "login"}
+            onClick={() => setActiveMode("login")}
           >
-            <Contact size={20} />
-          </IconWrapper>
-          <Input
-            $styleString={cssPropertiesToString(themeObject["inputWithIcon"])}
-            type="text"
-            placeholder={
-              activeMode == "login"
-                ? "Enter your username"
-                : "Choose your username"
-            }
-            value={state.username}
-            onChange={behavior.handleUsername}
-          />
-        </InputWrapper>
-      </InputContainer>
-    </Container>
+            Log In
+          </TabButton>
+          <TabButton
+            $styleString={cssPropertiesToString(
+              activeMode === "signup"
+                ? themeObject["tabButtonActive"]
+                : themeObject["tabButton"]
+            )}
+            $active={activeMode === "signup"}
+            onClick={() => setActiveMode("signup")}
+          >
+            Sign Up
+          </TabButton>
+        </TabContainer>
+
+        <InputContainer>
+          <InputWrapper
+            $styleString={cssPropertiesToString(themeObject["inputWrapper"])}
+          >
+            <IconWrapper
+              $styleString={cssPropertiesToString(themeObject["inputIcon"])}
+            >
+              <Mail size={20} />
+            </IconWrapper>
+            <Input
+              $styleString={cssPropertiesToString(themeObject["inputWithIcon"])}
+              type="text"
+              value={state.email}
+              placeholder="Enter your email"
+              onChange={behavior.handleEmail}
+            />
+          </InputWrapper>
+
+          <InputWrapper
+            $styleString={cssPropertiesToString(themeObject["inputWrapper"])}
+          >
+            <IconWrapper
+              $styleString={cssPropertiesToString(themeObject["inputIcon"])}
+            >
+              <Contact size={20} />
+            </IconWrapper>
+            <Input
+              $styleString={cssPropertiesToString(themeObject["inputWithIcon"])}
+              type="text"
+              placeholder={
+                activeMode == "login"
+                  ? "Enter your username"
+                  : "Choose your username"
+              }
+              value={state.username}
+              onChange={behavior.handleUsername}
+            />
+          </InputWrapper>
+        </InputContainer>
+      </Container>
+    </Card>
   );
 };
 
