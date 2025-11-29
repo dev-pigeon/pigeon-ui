@@ -176,7 +176,11 @@ const AuthWidget = ({
           <Input
             $styleString={cssPropertiesToString(themeObject["inputWithIcon"])}
             type="text"
-            placeholder="Enter your username"
+            placeholder={
+              activeMode == "login"
+                ? "Enter your username"
+                : "Choose your username"
+            }
             value={state.username}
             onChange={behavior.handleUsername}
           />
