@@ -1,7 +1,19 @@
 import React, { useState } from "react";
-import styled from "styled-components";
-import { themes } from "./themes";
+import { themes } from "./themes/themes";
 import { Mail, Contact } from "lucide-react";
+import {
+  Card,
+  Container,
+  TabContainer,
+  Title,
+  SubTitle,
+  TabButton,
+  SubmitButton,
+  InputContainer,
+  InputWrapper,
+  IconWrapper,
+  Input,
+} from "./components";
 
 interface AuthWidgetBehaviors {
   handleUsername: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -29,75 +41,6 @@ const cssPropertiesToString = (styles: React.CSSProperties): string => {
     })
     .join("\n  ");
 };
-
-const Card = styled.div<{ $styleString: string }>`
-  ${(props) => props.$styleString}
-`;
-
-const Container = styled.div<{ $styleString: string }>`
-  ${(props) => props.$styleString}
-`;
-
-const Title = styled.p<{ $styleString: string }>`
-  ${(props) => props.$styleString}
-`;
-
-const SubTitle = styled.p<{ $styleString: string }>`
-  ${(props) => props.$styleString}
-`;
-
-const TabContainer = styled.div<{ $styleString: string }>`
-  ${(props) => props.$styleString}
-`;
-
-const InputContainer = styled.div`
-  width: 81.5%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-`;
-
-const SubmitButton = styled.button<{ $styleString: string }>`
-  ${(props) => props.$styleString}
-`;
-
-const TabButton = styled.button<{ $styleString: string; $active: boolean }>`
-  ${(props) => props.$styleString}
-
-  &:hover {
-    background-color: ${(props) => (props.$active ? "" : "#1e293b")};
-    border: 0.5px solid #c4cfe7ff;
-  }
-
-  transition: all 0.5s ease-in-out;
-
-  &:focus {
-    outline: 2px solid "#c4cfe7ff";
-  }
-`;
-
-const Input = styled.input<{ $styleString: string }>`
-  ${(props) => props.$styleString}
-
-  &::placeholder {
-    color: #64748b;
-    opacity: 1;
-  }
-
-  &:focus {
-    outline: 2px solid #3b82f6;
-    outline-offset: 0;
-    border-color: #3b82f6;
-  }
-`;
-
-const InputWrapper = styled.div<{ $styleString: string }>`
-  ${(props) => props.$styleString}
-`;
-
-const IconWrapper = styled.div<{ $styleString: string }>`
-  ${(props) => props.$styleString}
-`;
 
 const AuthWidget = ({
   theme = "modern",

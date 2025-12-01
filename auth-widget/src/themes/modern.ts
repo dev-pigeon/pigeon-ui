@@ -1,12 +1,4 @@
-import type React from "react"
-
-type Theme  = {
-    [key : string] : React.CSSProperties
-}
-
-type ThemeDict = {
-    [key : string] : Theme
-}
+import { type Theme } from "./themes";
 
 const modernCard : React.CSSProperties = {
     display : "flex",
@@ -15,7 +7,7 @@ const modernCard : React.CSSProperties = {
     flexDirection : "column",
     background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)',
     color : "white",
-    minWidth:"400px",
+    minWidth:"300px",
     borderRadius :"10px",
     padding : "20px",
   }
@@ -117,7 +109,7 @@ const modernInputIcon: React.CSSProperties = {
     height:"20px"
 };
 
-const modern : Theme = {
+export const modern : Theme = {
     'submitButton' : submitButton,
     'card' : modernCard,
     "container" : modernContainer,
@@ -130,17 +122,3 @@ const modern : Theme = {
     "inputWithIcon" : modernInputWithIcon,
     'inputIcon' : modernInputIcon,
 }
-
-
-export const themes : ThemeDict = {
-    "modern" : modern
-}
-
-/*
-components to make:
-3. button group for toggling sign up / login
-4. regular text box (username / email)
-5. password text box
-6. password eye
-7. submit button (logging and signing in)
-*/
