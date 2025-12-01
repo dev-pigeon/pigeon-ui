@@ -5,6 +5,7 @@ import { Mail, Contact } from "lucide-react";
 import { Input, InputContainer, InputWrapper } from "./components/inputs";
 import { Card, Container, TabContainer } from "./components/layout";
 import { TabButton, SubmitButton } from "./components/buttons";
+import { Title, SubTitle } from "./components/typography";
 
 interface AuthWidgetBehaviors {
   handleUsername: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -32,14 +33,6 @@ const cssPropertiesToString = (styles: React.CSSProperties): string => {
     })
     .join("\n  ");
 };
-
-const Title = styled.p<{ $styleString: string }>`
-  ${(props) => props.$styleString}
-`;
-
-const SubTitle = styled.p<{ $styleString: string }>`
-  ${(props) => props.$styleString}
-`;
 
 const IconWrapper = styled.div<{ $styleString: string }>`
   ${(props) => props.$styleString}
