@@ -28,6 +28,7 @@ function App() {
   return (
     <>
       <AuthWidget
+        theme="modern"
         behavior={{ handleEmail, handleUsername, handlePassword }}
         state={{ username, email, password }}
       />
