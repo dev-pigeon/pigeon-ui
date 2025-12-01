@@ -76,7 +76,7 @@ const submitButton : React.CSSProperties = {
 
 const modernTabButtonActive: React.CSSProperties = {
   ...modernTabButton,
-  backgroundColor: "#c4cfe7ff",
+  backgroundColor: "#3b82f6",
   color: "black",
 };
 
