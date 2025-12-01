@@ -2,14 +2,18 @@ import React, { useState } from "react";
 import { themes } from "./themes/themes";
 import { Mail, Contact } from "lucide-react";
 import {
-  Input,
+  Card,
+  Container,
+  TabContainer,
+  Title,
+  SubTitle,
+  TabButton,
+  SubmitButton,
   InputContainer,
   InputWrapper,
   IconWrapper,
-} from "./components/inputs";
-import { Card, Container, TabContainer } from "./components/layout";
-import { TabButton, SubmitButton } from "./components/buttons";
-import { Title, SubTitle } from "./components/typography";
+  Input,
+} from "./components";
 
 interface AuthWidgetBehaviors {
   handleUsername: (e: React.ChangeEvent<HTMLInputElement>) => void;
