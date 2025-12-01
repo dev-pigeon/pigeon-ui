@@ -104,15 +104,23 @@ const modernInputWithIcon: React.CSSProperties = {
 
 
 const modernInputIcon: React.CSSProperties = {
-    margin:"0px auto",
-    position: "absolute",
-    left: "12px",
-    top: "50%",
-    transform: "translateY(-50%)",
-    color: "#94a3b8",
-    pointerEvents: "none", // Icon won't block input clicks
-    height:"20px"
+  margin: "0px auto",
+  position: "absolute",
+  left: "12px",
+  top: "50%",
+  transform: "translateY(-50%)",
+  color: "#94a3b8",
+  pointerEvents: "none", // Now it's clickable
+  height: "20px",
 };
+
+const modernPasswordIcon: React.CSSProperties = {
+  ...modernInputIcon,
+  cursor: "pointer",
+  transition: "color 0.2s ease",
+  zIndex:10,
+  pointerEvents: "auto", // Now it's clickable
+}
 
 export const modern : Theme = {
     'submitButton' : submitButton,
@@ -126,4 +134,5 @@ export const modern : Theme = {
     "inputWrapper" : modernInputWrapper,
     "inputWithIcon" : modernInputWithIcon,
     'inputIcon' : modernInputIcon,
+    'passwordIcon' : modernPasswordIcon
 }

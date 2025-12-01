@@ -11,6 +11,10 @@ const InputContainer = styled.div`
 
 const IconWrapper = styled.div<{ $styleString: string }>`
   ${(props) => props.$styleString}
+
+  &:hover {
+    color: #cbd5e1;
+  }
 `;
 
 const Input = styled.input<{ $styleString: string }>`

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { themes } from "./themes/themes";
-import { Mail, Contact, EyeClosed, Eye } from "lucide-react";
+import { Mail, Contact, Eye, EyeOff } from "lucide-react";
 import {
   Card,
   Container,
@@ -53,8 +53,9 @@ const AuthWidget = ({
 }: AuthWidgetProps) => {
   const themeObject = themes[theme];
   const [activeMode, setActiveMode] = useState<"login" | "signup" | "none">(
-    "none"
+    "login"
   );
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <Card $styleString={cssPropertiesToString(themeObject["card"])}>
@@ -146,13 +147,16 @@ const AuthWidget = ({
             $styleString={cssPropertiesToString(themeObject["inputWrapper"])}
           >
             <IconWrapper
-              $styleString={cssPropertiesToString(themeObject["inputIcon"])}
+              onClick={() => {
+                setShowPassword(!showPassword);
+              }}
+              $styleString={cssPropertiesToString(themeObject["passwordIcon"])}
             >
-              <EyeClosed size={20} />
+              {showPassword ? <Eye size={20} /> : <EyeOff size={20} />}
             </IconWrapper>
             <Input
               $styleString={cssPropertiesToString(themeObject["inputWithIcon"])}
-              type="password"
+              type={showPassword ? "text" : "password"}
               value={state.password}
               placeholder={
                 activeMode == "login"
