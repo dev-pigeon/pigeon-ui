@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import AuthWidget from "./components/AuthWidget";
+import AuthWidget from "./AuthWidget";
 
 function App() {
   const [username, setUsername] = useState<string>("");
