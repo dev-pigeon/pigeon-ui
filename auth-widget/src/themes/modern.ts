@@ -7,7 +7,7 @@ const modernCard : React.CSSProperties = {
     flexDirection : "column",
     background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)',
     color : "white",
-    minWidth:"300px",
+    minWidth:"350px",
     borderRadius :"10px",
     padding : "20px",
   }
@@ -84,16 +84,19 @@ const modernTabButtonActive: React.CSSProperties = {
 
 const modernInputWrapper: React.CSSProperties = {
   position: "relative",
-  width: "100%",
-};
-
-const modernInputWithIcon: React.CSSProperties = {
+  width: "inherit",
   backgroundColor: "#0f172a",
-  border: "1px solid #334155",
+  borderRadius: "6px 6px 0 0", 
+  paddingBottom : '4px'
+};
+const modernInputWithIcon: React.CSSProperties = {
+  backgroundColor: "transparent",
+  border: "none",
+  borderBottom: "1px solid #334155",
   color: "white",
-  padding: "12px 12px 12px 40px", // Extra left padding for icon
-  borderRadius: "6px",
-  width: "100%",
+  padding: "12px 12px 12px 40px",
+  borderRadius: "0",
+  width: "inherit",
   fontSize: "1rem",
 };
 
