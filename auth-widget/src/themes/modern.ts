@@ -1,3 +1,5 @@
+import type { InputStyles } from "../components";
+
 const modernCard : React.CSSProperties = {
     display : "flex",
     flexDirection : "column",
@@ -116,6 +118,12 @@ const modernPasswordIcon: React.CSSProperties = {
   pointerEvents: "auto",
 }
 
+const inputStyles : InputStyles = {
+  focusColor : '#055ff1ff',
+  placeholderColor : '#64748b',
+  shadowColor : 'rgba(59, 131, 246, 0.7)'
+}
+
 export const modern = {
     'submitButton' : submitButton,
     'card' : modernCard,
@@ -129,7 +137,6 @@ export const modern = {
     "inputWithIcon" : modernInputWithIcon,
     'inputIcon' : modernInputIcon,
     'passwordIcon' : modernPasswordIcon,
-    'focusColor' : '#055ff1ff',
-    'placeholderColor' : '#64748b',
-    'shadowColor' : 'rgba(59, 131, 246, 0.7)'
+    'inputStyles' : inputStyles
+    
 }

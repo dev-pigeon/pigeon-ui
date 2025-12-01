@@ -13,6 +13,7 @@ import {
   InputWrapper,
   IconWrapper,
   Input,
+  type InputStyles,
 } from "./components";
 
 interface AuthWidgetBehaviors {
@@ -48,7 +49,7 @@ type AuthWidgetProps = {
 };
 
 const cssPropertiesToString = (
-  styles: React.CSSProperties | string
+  styles: React.CSSProperties | InputStyles
 ): string => {
   return Object.entries(styles)
     .map(([key, value]) => {
@@ -64,8 +65,10 @@ const AuthWidget = ({
   subtitle,
   state,
   behavior,
+  styleOverrides,
 }: AuthWidgetProps) => {
   const themeObject = themes[theme];
+  const inputStyles = themeObject["inputStyles"] as InputStyles;
   const [activeMode, setActiveMode] = useState<"login" | "signup" | "none">(
     "login"
   );
@@ -130,6 +133,21 @@ const AuthWidget = ({
             </IconWrapper>
             <Input
               $styleString={cssPropertiesToString(themeObject["inputWithIcon"])}
+              $focusColor={
+                styleOverrides?.input.focusColor
+                  ? styleOverrides.input.focusColor
+                  : inputStyles.focusColor
+              }
+              $placeholderColor={
+                styleOverrides?.input.placeholderColor
+                  ? styleOverrides.input.placeholderColor
+                  : inputStyles.placeholderColor
+              }
+              $shadowColor={
+                styleOverrides?.input.shadowColor
+                  ? styleOverrides.input.shadowColor
+                  : inputStyles.shadowColor
+              }
               type="text"
               value={state.email}
               placeholder="Enter your email"
@@ -146,6 +164,21 @@ const AuthWidget = ({
             </IconWrapper>
             <Input
               $styleString={cssPropertiesToString(themeObject["inputWithIcon"])}
+              $focusColor={
+                styleOverrides?.input.focusColor
+                  ? styleOverrides.input.focusColor
+                  : inputStyles.focusColor
+              }
+              $placeholderColor={
+                styleOverrides?.input.placeholderColor
+                  ? styleOverrides.input.placeholderColor
+                  : inputStyles.placeholderColor
+              }
+              $shadowColor={
+                styleOverrides?.input.shadowColor
+                  ? styleOverrides.input.shadowColor
+                  : inputStyles.shadowColor
+              }
               type="text"
               placeholder={
                 activeMode == "login"
@@ -170,6 +203,21 @@ const AuthWidget = ({
             </IconWrapper>
             <Input
               $styleString={cssPropertiesToString(themeObject["inputWithIcon"])}
+              $focusColor={
+                styleOverrides?.input.focusColor
+                  ? styleOverrides.input.focusColor
+                  : inputStyles.focusColor
+              }
+              $placeholderColor={
+                styleOverrides?.input.placeholderColor
+                  ? styleOverrides.input.placeholderColor
+                  : inputStyles.placeholderColor
+              }
+              $shadowColor={
+                styleOverrides?.input.shadowColor
+                  ? styleOverrides.input.shadowColor
+                  : inputStyles.shadowColor
+              }
               type={showPassword ? "text" : "password"}
               value={state.password}
               placeholder={
