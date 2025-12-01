@@ -27,9 +27,21 @@ interface AuthWidgetState {
   password: string;
 }
 
+interface InputStyleOverride {
+  sx?: React.CSSProperties;
+  focusColor?: string;
+  shadowColor?: string;
+  placeholderColor?: string;
+}
+
+interface StyleOverrides {
+  input: InputStyleOverride;
+}
+
 type AuthWidgetProps = {
   behavior: AuthWidgetBehaviors;
   state: AuthWidgetState;
+  styleOverrides?: StyleOverrides;
   theme?: "modern" | "light" | "dark";
   title?: string;
   subtitle?: string;
