@@ -35,7 +35,9 @@ type AuthWidgetProps = {
   subtitle?: string;
 };
 
-const cssPropertiesToString = (styles: React.CSSProperties): string => {
+const cssPropertiesToString = (
+  styles: React.CSSProperties | string
+): string => {
   return Object.entries(styles)
     .map(([key, value]) => {
       const kebabKey = key.replace(/([A-Z])/g, "-$1").toLowerCase();
