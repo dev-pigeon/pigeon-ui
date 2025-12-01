@@ -6,7 +6,7 @@ const InputContainer = styled.div`
   flex-direction: column;
   gap: 10px;
   overflow: hidden;
-  padding-bottom: 12px;
+  padding-bottom: 2px;
 `;
 
 const IconWrapper = styled.div<{ $styleString: string }>`

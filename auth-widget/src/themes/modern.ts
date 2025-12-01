@@ -1,28 +1,25 @@
 const modernCard : React.CSSProperties = {
     display : "flex",
-    justifyContent:"space-around",
-    alignItems:"flex-start",
     flexDirection : "column",
     background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)',
     color : "white",
     minWidth:"350px",
     borderRadius :"10px",
-    padding : "20px",
-    maxHeight:"350px",  
+    padding : "25px",
+   
   }
   
   
   const modernContainer : React.CSSProperties = {
     display : "flex",
-    gap : "10px",
-    justifyContent:"space-around",
-    alignItems:"flex-start",
+    gap : "15px",
     flexDirection : "column",
+    justifyContent:'space-between',
     borderRadius :"10px",
     width : "100%",
-    maxHeight:"inherit",
-}
+    height:"auto",
 
+}
 
 const modernTitle : React.CSSProperties = {
     color: "white",
@@ -42,7 +39,6 @@ const modernTabContainer: React.CSSProperties = {
   width: "100%",
   borderRadius: "8px",
   display: "flex",
-  marginBottom: "24px",
   flexFlow:"row nowrap",
   backgroundColor: "#0f172a",
 };
@@ -71,7 +67,8 @@ const submitButton : React.CSSProperties = {
   fontWeight: "500",
   transition: "all 0.2s ease",
   margin: '0px 0px',
-  width :"95%"
+  width :"95%",
+  maxHeight:'50px'
 }
 
 
