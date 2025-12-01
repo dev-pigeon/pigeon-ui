@@ -2,7 +2,7 @@ import type React from "react"
 import { modern } from "./modern"
 
 type Theme  = {
-    [key : string] : React.CSSProperties
+    [key : string] : React.CSSProperties | string
 }
 
 type ThemeDict = {
@@ -11,7 +11,7 @@ type ThemeDict = {
 
 
 const themes : ThemeDict = {
-    "modern" : modern
+    "modern" : modern,
 }
 
 export {

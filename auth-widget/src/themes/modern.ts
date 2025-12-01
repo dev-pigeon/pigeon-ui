@@ -1,5 +1,3 @@
-import { type Theme } from "./themes";
-
 const modernCard : React.CSSProperties = {
     display : "flex",
     justifyContent:"space-around",
@@ -14,7 +12,6 @@ const modernCard : React.CSSProperties = {
   }
   
   
-  // add these: border radius / color, dynamic sizing
   const modernContainer : React.CSSProperties = {
     display : "flex",
     gap : "10px",
@@ -110,7 +107,7 @@ const modernInputIcon: React.CSSProperties = {
   top: "50%",
   transform: "translateY(-50%)",
   color: "#94a3b8",
-  pointerEvents: "none", // Now it's clickable
+  pointerEvents: "none", 
   height: "20px",
 };
 
@@ -119,10 +116,10 @@ const modernPasswordIcon: React.CSSProperties = {
   cursor: "pointer",
   transition: "color 0.2s ease",
   zIndex:10,
-  pointerEvents: "auto", // Now it's clickable
+  pointerEvents: "auto",
 }
 
-export const modern : Theme = {
+export const modern = {
     'submitButton' : submitButton,
     'card' : modernCard,
     "container" : modernContainer,
@@ -134,5 +131,8 @@ export const modern : Theme = {
     "inputWrapper" : modernInputWrapper,
     "inputWithIcon" : modernInputWithIcon,
     'inputIcon' : modernInputIcon,
-    'passwordIcon' : modernPasswordIcon
+    'passwordIcon' : modernPasswordIcon,
+    'focusColor' : '#055ff1ff',
+    'placeholderColor' : '#64748b',
+    'shadowColor' : 'rgba(59, 131, 246, 0.7)'
 }
