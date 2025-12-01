@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { themes } from "./themes";
+import { themes } from "../themes";
 import { Mail, Contact } from "lucide-react";
 
 interface AuthWidgetBehaviors {
