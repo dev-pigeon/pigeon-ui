@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { themes } from "./themes/themes";
 import { Mail, Contact, Eye, EyeOff } from "lucide-react";
 import {
