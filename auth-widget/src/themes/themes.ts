@@ -1,6 +1,7 @@
 import type React from "react"
 import { modern } from "./modern"
 import { dark } from "./dark"
+import { light } from "./light"
 import type { ButtonStyles, InputStyles } from "../components"
 
 type Theme = {
@@ -28,7 +29,8 @@ type ThemeDict = {
 
 const themes : ThemeDict = {
     "modern" : modern,
-    'dark' : dark
+    'dark' : dark,
+    'light' : light
 }
 
 export {
