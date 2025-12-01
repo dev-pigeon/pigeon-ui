@@ -1,3 +1,5 @@
+import type React from "react"
+
 type Theme  = {
     [key : string] : React.CSSProperties
 }
@@ -22,7 +24,7 @@ const modernCard : React.CSSProperties = {
   // add these: border radius / color, dynamic sizing
   const modernContainer : React.CSSProperties = {
     display : "flex",
-    gap : "10px",
+    gap : "20px",
     justifyContent:"space-around",
     alignItems:"flex-start",
     flexDirection : "column",
@@ -68,11 +70,24 @@ const modernTabButton: React.CSSProperties = {
   width :"40%"
 };
 
+const submitButton : React.CSSProperties = {
+  flex: 1,
+  padding: "10px",
+  backgroundColor: "#3b82f6",
+  borderRadius: "10px",
+  cursor: "pointer",
+  fontSize: "0.87rem",
+  fontWeight: "500",
+  transition: "all 0.2s ease",
+  margin: '0px 0px',
+  width :"95%"
+}
+
 
 const modernTabButtonActive: React.CSSProperties = {
   ...modernTabButton,
-  backgroundColor: "#2563eb",
-  color: "white",
+  backgroundColor: "#c4cfe7ff",
+  color: "black",
 };
 
 const modernInputWrapper: React.CSSProperties = {
@@ -103,6 +118,7 @@ const modernInputIcon: React.CSSProperties = {
 };
 
 const modern : Theme = {
+    'submitButton' : submitButton,
     'card' : modernCard,
     "container" : modernContainer,
     "title" : modernTitle,

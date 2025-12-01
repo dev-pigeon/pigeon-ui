@@ -51,23 +51,28 @@ const TabContainer = styled.div<{ $styleString: string }>`
 `;
 
 const InputContainer = styled.div`
-  width: 50%;
+  width: 81.5%;
   display: flex;
   flex-direction: column;
   gap: 10px;
+`;
+
+const SubmitButton = styled.button<{ $styleString: string }>`
+  ${(props) => props.$styleString}
 `;
 
 const TabButton = styled.button<{ $styleString: string; $active: boolean }>`
   ${(props) => props.$styleString}
 
   &:hover {
-    background-color: ${(props) => (props.$active ? "#2563eb" : "#1e293b")};
+    background-color: ${(props) => (props.$active ? "" : "#1e293b")};
+    border: 0.5px solid #c4cfe7ff;
   }
 
   transition: all 0.5s ease-in-out;
 
   &:focus {
-    outline: 2px solid #3b82f6;
+    outline: 2px solid "#c4cfe7ff";
   }
 `;
 
@@ -161,23 +166,6 @@ const AuthWidget = ({
             <IconWrapper
               $styleString={cssPropertiesToString(themeObject["inputIcon"])}
             >
-              <Mail size={20} />
-            </IconWrapper>
-            <Input
-              $styleString={cssPropertiesToString(themeObject["inputWithIcon"])}
-              type="text"
-              value={state.email}
-              placeholder="Enter your email"
-              onChange={behavior.handleEmail}
-            />
-          </InputWrapper>
-
-          <InputWrapper
-            $styleString={cssPropertiesToString(themeObject["inputWrapper"])}
-          >
-            <IconWrapper
-              $styleString={cssPropertiesToString(themeObject["inputIcon"])}
-            >
               <Contact size={20} />
             </IconWrapper>
             <Input
@@ -192,7 +180,29 @@ const AuthWidget = ({
               onChange={behavior.handleUsername}
             />
           </InputWrapper>
+          <InputWrapper
+            $styleString={cssPropertiesToString(themeObject["inputWrapper"])}
+          >
+            <IconWrapper
+              $styleString={cssPropertiesToString(themeObject["inputIcon"])}
+            >
+              <Mail size={20} />
+            </IconWrapper>
+            <Input
+              $styleString={cssPropertiesToString(themeObject["inputWithIcon"])}
+              type="text"
+              value={state.email}
+              placeholder="Enter your email"
+              onChange={behavior.handleEmail}
+            />
+          </InputWrapper>
         </InputContainer>
+
+        <SubmitButton
+          $styleString={cssPropertiesToString(themeObject["submitButton"])}
+        >
+          {activeMode == "login" ? "Log In" : "Sign Up"}
+        </SubmitButton>
       </Container>
     </Card>
   );
