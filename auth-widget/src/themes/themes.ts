@@ -3,8 +3,21 @@ import { modern } from "./modern"
 import { dark } from "./dark"
 import type { InputStyles } from "../components"
 
-type Theme  = {
-    [key : string] : React.CSSProperties | InputStyles
+type Theme = {
+  card: React.CSSProperties;
+  container: React.CSSProperties;
+  title: React.CSSProperties;
+  subtitle: React.CSSProperties;
+  tabContainer: React.CSSProperties;
+  tabButton: React.CSSProperties;
+  tabButtonActive: React.CSSProperties;
+  inputWrapper: React.CSSProperties;
+  inputWithIcon: React.CSSProperties;
+  inputIcon: React.CSSProperties;
+  submitButton: React.CSSProperties;
+  passwordIcon: React.CSSProperties;
+  inputStyles: InputStyles; 
+ 
 }
 
 type ThemeDict = {
