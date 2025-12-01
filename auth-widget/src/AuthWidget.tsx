@@ -4,6 +4,7 @@ import { themes } from "./themes/themes";
 import { Mail, Contact } from "lucide-react";
 import { Input, InputContainer, InputWrapper } from "./components/inputs";
 import { Card, Container, TabContainer } from "./components/layout";
+import { TabButton, SubmitButton } from "./components/buttons";
 
 interface AuthWidgetBehaviors {
   handleUsername: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -38,25 +39,6 @@ const Title = styled.p<{ $styleString: string }>`
 
 const SubTitle = styled.p<{ $styleString: string }>`
   ${(props) => props.$styleString}
-`;
-
-const SubmitButton = styled.button<{ $styleString: string }>`
-  ${(props) => props.$styleString}
-`;
-
-const TabButton = styled.button<{ $styleString: string; $active: boolean }>`
-  ${(props) => props.$styleString}
-
-  &:hover {
-    background-color: ${(props) => (props.$active ? "" : "#1e293b")};
-    border: 0.5px solid #c4cfe7ff;
-  }
-
-  transition: all 0.5s ease-in-out;
-
-  &:focus {
-    outline: 2px solid "#c4cfe7ff";
-  }
 `;
 
 const IconWrapper = styled.div<{ $styleString: string }>`
