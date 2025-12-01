@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { themes } from "./themes/themes";
 import { Mail, Contact } from "lucide-react";
 import { Input, InputContainer, InputWrapper } from "./components/inputs";
+import { Card, Container, TabContainer } from "./components/layout";
 
 interface AuthWidgetBehaviors {
   handleUsername: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -31,23 +32,11 @@ const cssPropertiesToString = (styles: React.CSSProperties): string => {
     .join("\n  ");
 };
 
-const Card = styled.div<{ $styleString: string }>`
-  ${(props) => props.$styleString}
-`;
-
-const Container = styled.div<{ $styleString: string }>`
-  ${(props) => props.$styleString}
-`;
-
 const Title = styled.p<{ $styleString: string }>`
   ${(props) => props.$styleString}
 `;
 
 const SubTitle = styled.p<{ $styleString: string }>`
-  ${(props) => props.$styleString}
-`;
-
-const TabContainer = styled.div<{ $styleString: string }>`
   ${(props) => props.$styleString}
 `;
 
