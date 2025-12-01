@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import { themes } from "./themes/themes";
 import { Mail, Contact } from "lucide-react";
-import { Input, InputContainer, InputWrapper } from "./components/inputs";
+import {
+  Input,
+  InputContainer,
+  InputWrapper,
+  IconWrapper,
+} from "./components/inputs";
 import { Card, Container, TabContainer } from "./components/layout";
 import { TabButton, SubmitButton } from "./components/buttons";
 import { Title, SubTitle } from "./components/typography";
@@ -33,10 +37,6 @@ const cssPropertiesToString = (styles: React.CSSProperties): string => {
     })
     .join("\n  ");
 };
-
-const IconWrapper = styled.div<{ $styleString: string }>`
-  ${(props) => props.$styleString}
-`;
 
 const AuthWidget = ({
   theme = "modern",

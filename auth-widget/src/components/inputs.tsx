@@ -7,6 +7,10 @@ const InputContainer = styled.div`
   gap: 10px;
 `;
 
+const IconWrapper = styled.div<{ $styleString: string }>`
+  ${(props) => props.$styleString}
+`;
+
 const Input = styled.input<{ $styleString: string }>`
   ${(props) => props.$styleString}
 
@@ -26,4 +30,4 @@ const InputWrapper = styled.div<{ $styleString: string }>`
   ${(props) => props.$styleString}
 `;
 
-export { InputContainer, Input, InputWrapper };
+export { InputContainer, Input, InputWrapper, IconWrapper };

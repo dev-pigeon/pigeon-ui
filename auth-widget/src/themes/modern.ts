@@ -7,7 +7,7 @@ const modernCard : React.CSSProperties = {
     flexDirection : "column",
     background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)',
     color : "white",
-    minWidth:"400px",
+    minWidth:"300px",
     borderRadius :"10px",
     padding : "20px",
   }
