@@ -5,6 +5,7 @@ import AuthWidget from "./AuthWidget";
 function App() {
   const [username, setUsername] = useState<string>("");
   const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   const handleUsername = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target) {
@@ -18,11 +19,17 @@ function App() {
     }
   };
 
+  const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target) {
+      setPassword(e.target.value);
+    }
+  };
+
   return (
     <>
       <AuthWidget
-        behavior={{ handleEmail, handleUsername }}
-        state={{ username, email }}
+        behavior={{ handleEmail, handleUsername, handlePassword }}
+        state={{ username, email, password }}
       />
     </>
   );

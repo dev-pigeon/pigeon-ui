@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { themes } from "./themes/themes";
-import { Mail, Contact } from "lucide-react";
+import { Mail, Contact, EyeClosed, Eye } from "lucide-react";
 import {
   Card,
   Container,
@@ -18,11 +18,13 @@ import {
 interface AuthWidgetBehaviors {
   handleUsername: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleEmail: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handlePassword: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 interface AuthWidgetState {
   username: string;
   email: string;
+  password: string;
 }
 
 type AuthWidgetProps = {
@@ -109,6 +111,22 @@ const AuthWidget = ({
             <IconWrapper
               $styleString={cssPropertiesToString(themeObject["inputIcon"])}
             >
+              <Mail size={20} />
+            </IconWrapper>
+            <Input
+              $styleString={cssPropertiesToString(themeObject["inputWithIcon"])}
+              type="text"
+              value={state.email}
+              placeholder="Enter your email"
+              onChange={behavior.handleEmail}
+            />
+          </InputWrapper>
+          <InputWrapper
+            $styleString={cssPropertiesToString(themeObject["inputWrapper"])}
+          >
+            <IconWrapper
+              $styleString={cssPropertiesToString(themeObject["inputIcon"])}
+            >
               <Contact size={20} />
             </IconWrapper>
             <Input
@@ -123,20 +141,25 @@ const AuthWidget = ({
               onChange={behavior.handleUsername}
             />
           </InputWrapper>
+
           <InputWrapper
             $styleString={cssPropertiesToString(themeObject["inputWrapper"])}
           >
             <IconWrapper
               $styleString={cssPropertiesToString(themeObject["inputIcon"])}
             >
-              <Mail size={20} />
+              <EyeClosed size={20} />
             </IconWrapper>
             <Input
               $styleString={cssPropertiesToString(themeObject["inputWithIcon"])}
-              type="text"
-              value={state.email}
-              placeholder="Enter your email"
-              onChange={behavior.handleEmail}
+              type="password"
+              value={state.password}
+              placeholder={
+                activeMode == "login"
+                  ? "Enter your password"
+                  : "Choose your password"
+              }
+              onChange={behavior.handlePassword}
             />
           </InputWrapper>
         </InputContainer>
