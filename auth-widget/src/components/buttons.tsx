@@ -37,7 +37,6 @@ const TabButton = styled.button<{
   ${(props) => props.$styleString}
 
   &:hover {
-    background-color: ${(props) => (props.$active ? "" : "#1e293b")};
     border: 0.5px solid #c4cfe7ff;
   }
 

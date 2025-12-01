@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export interface InputStyles {
+  focusColor?: string;
+  shadowColor?: string;
+  placeholderColor?: string;
+}
+
 const InputContainer = styled.div`
   width: 100%;
   display: flex;

@@ -1,4 +1,5 @@
 import React from "react";
+import type { InputStyles } from "../components";
 
 const darkCard: React.CSSProperties = {
   display: "flex",
@@ -114,6 +115,12 @@ const darkPasswordIcon: React.CSSProperties = {
   pointerEvents: "auto",
 }
 
+const inputStyles : InputStyles = {
+  'focusColor': '#8b5cf6',
+  'placeholderColor': '#6b7280',
+  'shadowColor': 'rgba(139, 92, 246, 0.6)'
+}
+
 export const dark = {
   'submitButton': darkSubmitButton,
   'card': darkCard,
@@ -127,7 +134,5 @@ export const dark = {
   "inputWithIcon": darkInputWithIcon,
   'inputIcon': darkInputIcon,
   'passwordIcon': darkPasswordIcon,
-  'focusColor': '#8b5cf6',
-  'placeholderColor': '#6b7280',
-  'shadowColor': 'rgba(139, 92, 246, 0.6)'
+  'inputStyles' : inputStyles
 }
