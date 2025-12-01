@@ -14,6 +14,7 @@ import {
   IconWrapper,
   Input,
   type InputStyles,
+  type ButtonStyles,
 } from "./components";
 
 interface AuthWidgetBehaviors {
@@ -35,8 +36,15 @@ interface InputStyleOverride {
   placeholderColor?: string;
 }
 
+interface ButtonStyleOverride {
+  sx?: React.CSSProperties;
+  hoverBgColor?: string;
+  hoverBoxShadow?: string;
+}
+
 interface StyleOverrides {
-  input: InputStyleOverride;
+  input?: InputStyleOverride;
+  button?: ButtonStyleOverride;
 }
 
 type AuthWidgetProps = {
@@ -69,6 +77,7 @@ const AuthWidget = ({
 }: AuthWidgetProps) => {
   const themeObject = themes[theme];
   const inputStyles = themeObject["inputStyles"] as InputStyles;
+  const buttonStyles = themeObject["buttonStyles"] as ButtonStyles;
   const [activeMode, setActiveMode] = useState<"login" | "signup" | "none">(
     "login"
   );
@@ -134,17 +143,17 @@ const AuthWidget = ({
             <Input
               $styleString={cssPropertiesToString(themeObject["inputWithIcon"])}
               $focusColor={
-                styleOverrides?.input.focusColor
+                styleOverrides?.input?.focusColor
                   ? styleOverrides.input.focusColor
                   : inputStyles.focusColor
               }
               $placeholderColor={
-                styleOverrides?.input.placeholderColor
+                styleOverrides?.input?.placeholderColor
                   ? styleOverrides.input.placeholderColor
                   : inputStyles.placeholderColor
               }
               $shadowColor={
-                styleOverrides?.input.shadowColor
+                styleOverrides?.input?.shadowColor
                   ? styleOverrides.input.shadowColor
                   : inputStyles.shadowColor
               }
@@ -165,17 +174,17 @@ const AuthWidget = ({
             <Input
               $styleString={cssPropertiesToString(themeObject["inputWithIcon"])}
               $focusColor={
-                styleOverrides?.input.focusColor
+                styleOverrides?.input?.focusColor
                   ? styleOverrides.input.focusColor
                   : inputStyles.focusColor
               }
               $placeholderColor={
-                styleOverrides?.input.placeholderColor
+                styleOverrides?.input?.placeholderColor
                   ? styleOverrides.input.placeholderColor
                   : inputStyles.placeholderColor
               }
               $shadowColor={
-                styleOverrides?.input.shadowColor
+                styleOverrides?.input?.shadowColor
                   ? styleOverrides.input.shadowColor
                   : inputStyles.shadowColor
               }
@@ -204,17 +213,17 @@ const AuthWidget = ({
             <Input
               $styleString={cssPropertiesToString(themeObject["inputWithIcon"])}
               $focusColor={
-                styleOverrides?.input.focusColor
+                styleOverrides?.input?.focusColor
                   ? styleOverrides.input.focusColor
                   : inputStyles.focusColor
               }
               $placeholderColor={
-                styleOverrides?.input.placeholderColor
+                styleOverrides?.input?.placeholderColor
                   ? styleOverrides.input.placeholderColor
                   : inputStyles.placeholderColor
               }
               $shadowColor={
-                styleOverrides?.input.shadowColor
+                styleOverrides?.input?.shadowColor
                   ? styleOverrides.input.shadowColor
                   : inputStyles.shadowColor
               }
@@ -232,6 +241,16 @@ const AuthWidget = ({
 
         <SubmitButton
           $styleString={cssPropertiesToString(themeObject["submitButton"])}
+          $hoverBgColor={
+            styleOverrides?.button?.hoverBgColor
+              ? styleOverrides.button.hoverBgColor
+              : buttonStyles.hoverBgColor
+          }
+          $hoverBoxShadow={
+            styleOverrides?.button?.hoverBoxShadow
+              ? styleOverrides.button.hoverBoxShadow
+              : buttonStyles.hoverBoxShadow
+          }
         >
           {activeMode == "login" ? "Log In" : "Sign Up"}
         </SubmitButton>

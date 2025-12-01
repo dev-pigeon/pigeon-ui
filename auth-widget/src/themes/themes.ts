@@ -1,7 +1,7 @@
 import type React from "react"
 import { modern } from "./modern"
 import { dark } from "./dark"
-import type { InputStyles } from "../components"
+import type { ButtonStyles, InputStyles } from "../components"
 
 type Theme = {
   card: React.CSSProperties;
@@ -17,6 +17,7 @@ type Theme = {
   submitButton: React.CSSProperties;
   passwordIcon: React.CSSProperties;
   inputStyles: InputStyles; 
+  buttonStyles : ButtonStyles
  
 }
 

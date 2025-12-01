@@ -1,5 +1,5 @@
 import React from "react";
-import type { InputStyles } from "../components";
+import type { ButtonStyles, InputStyles } from "../components";
 
 const darkCard: React.CSSProperties = {
   display: "flex",
@@ -121,6 +121,11 @@ const inputStyles : InputStyles = {
   'shadowColor': 'rgba(139, 92, 246, 0.6)'
 }
 
+const buttonStyles : ButtonStyles = {
+    hoverBgColor: "#8342f3ff",
+    hoverBoxShadow: "0 4px 12px rgba(139, 92, 246, 0.5)"
+}
+
 export const dark = {
   'submitButton': darkSubmitButton,
   'card': darkCard,
@@ -134,5 +139,6 @@ export const dark = {
   "inputWithIcon": darkInputWithIcon,
   'inputIcon': darkInputIcon,
   'passwordIcon': darkPasswordIcon,
-  'inputStyles' : inputStyles
+  'inputStyles' : inputStyles,
+  'buttonStyles' : buttonStyles
 }

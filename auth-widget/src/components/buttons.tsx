@@ -1,18 +1,15 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
-const flash = keyframes`
-  0% {
-    background-color: #2563eb;
-  }
-  50% {
-    background-color: #1d4ed8;
-  }
-  100% {
-    background-color: #3b82f6;
-  }
-`;
+export interface ButtonStyles {
+  hoverBgColor?: string;
+  hoverBoxShadow?: string;
+}
 
-const SubmitButton = styled.button<{ $styleString: string }>`
+const SubmitButton = styled.button<{
+  $styleString: string;
+  $hoverBgColor?: string;
+  $hoverBoxShadow?: string;
+}>`
   ${(props) => props.$styleString}
   position: relative;
   overflow: hidden;
@@ -20,13 +17,13 @@ const SubmitButton = styled.button<{ $styleString: string }>`
 
   &:active {
     transform: scale(0.97);
-    animation: ${flash} 0.5s ease;
   }
 
   &:hover {
-    background-color: #2563eb;
+    background-color:${(props) => props.$hoverBgColor || "#2563eb"}
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    box-shadow: ${(props) =>
+      props.$hoverBoxShadow || "0 4px 12px rgba(59, 130, 246, 0.4)"};
   }
 `;
 

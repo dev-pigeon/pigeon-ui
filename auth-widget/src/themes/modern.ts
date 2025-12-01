@@ -1,4 +1,4 @@
-import type { InputStyles } from "../components";
+import type { ButtonStyles, InputStyles } from "../components";
 
 const modernCard : React.CSSProperties = {
     display : "flex",
@@ -124,6 +124,11 @@ const inputStyles : InputStyles = {
   shadowColor : 'rgba(59, 131, 246, 0.7)'
 }
 
+const buttonStyles : ButtonStyles = {
+    hoverBgColor: "#2563eb",
+    hoverBoxShadow: "0 4px 12px rgba(59, 130, 246, 0.4)"
+}
+
 export const modern = {
     'submitButton' : submitButton,
     'card' : modernCard,
@@ -137,6 +142,7 @@ export const modern = {
     "inputWithIcon" : modernInputWithIcon,
     'inputIcon' : modernInputIcon,
     'passwordIcon' : modernPasswordIcon,
-    'inputStyles' : inputStyles
+    'inputStyles' : inputStyles,
+    'buttonStyles' : buttonStyles
     
 }
