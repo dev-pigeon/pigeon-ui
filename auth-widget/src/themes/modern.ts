@@ -10,18 +10,20 @@ const modernCard : React.CSSProperties = {
     minWidth:"350px",
     borderRadius :"10px",
     padding : "20px",
+    maxHeight:"350px",  
   }
   
   
   // add these: border radius / color, dynamic sizing
   const modernContainer : React.CSSProperties = {
     display : "flex",
-    gap : "20px",
+    gap : "10px",
     justifyContent:"space-around",
     alignItems:"flex-start",
     flexDirection : "column",
     borderRadius :"10px",
     width : "100%",
+    maxHeight:"inherit",
 }
 
 
