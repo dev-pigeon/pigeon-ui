@@ -14,6 +14,7 @@ import {
   basePasswordIcon,
   baseStatusContainer,
   baseStatusContainerSuccess,
+  baseStatusContainerError,
 } from "./reusable";
 
 const modernCard: React.CSSProperties = {
@@ -119,5 +120,6 @@ export const modern = {
   inputStyles: inputStyles,
   buttonStyles: buttonStyles,
   statusContainerSuccess : baseStatusContainerSuccess,
+  statusContainerError : baseStatusContainerError,
   statusContainerIconColor: "#bed9bf",
 };

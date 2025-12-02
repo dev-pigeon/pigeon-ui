@@ -144,3 +144,14 @@ export const baseStatusContainerSuccess: React.CSSProperties = {
   color: "rgba(150, 225, 170, 0.9)",
   backdropFilter: "blur(2px)",
 };
+
+
+export const baseStatusContainerError: React.CSSProperties = {
+  ...baseStatusContainer,
+  background: "linear-gradient(135deg, #1a0f0f 0%, #2a1616 50%, #1a0f0f 100%)",
+  border: "1px solid rgba(200, 60, 60, 0.35)",
+  boxShadow:
+    "inset 0 1px 2px rgba(255, 255, 255, 0.06), 0 0 8px rgba(200, 60, 60, 0.20)",
+  color: "rgba(255, 160, 160, 0.9)",
+  backdropFilter: "blur(2px)",
+};

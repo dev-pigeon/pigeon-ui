@@ -240,17 +240,18 @@ const AuthWidget = ({
           </InputWrapper>
         </InputContainer>
 
-        {themeObject.statusContainerSuccess && (
-          <StatusContainer
-            $status="success"
-            $styleSuccess={cssPropertiesToString(
-              themeObject["statusContainerSuccess"]
-            )}
-          >
-            <Check color={themeObject.statusContainerIconColor} />
-            Success! Redirecting...
-          </StatusContainer>
-        )}
+        <StatusContainer
+          $status="error"
+          $styleError={cssPropertiesToString(
+            themeObject["statusContainerError"]
+          )}
+          $styleSuccess={cssPropertiesToString(
+            themeObject["statusContainerSuccess"]
+          )}
+        >
+          <Check color={themeObject.statusContainerIconColor} />
+          Success! Redirecting...
+        </StatusContainer>
 
         <SubmitButton
           $styleString={cssPropertiesToString(themeObject["submitButton"])}

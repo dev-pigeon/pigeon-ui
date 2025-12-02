@@ -14,6 +14,7 @@ import {
   basePasswordIcon,
   baseStatusContainer,
   baseStatusContainerSuccess,
+  baseStatusContainerError,
 } from "./reusable";
 
 const darkCard: React.CSSProperties = {
@@ -90,7 +91,6 @@ const buttonStyles: ButtonStyles = {
 };
 
 
-
 export const dark = {
   submitButton: darkSubmitButton,
   card: darkCard,
@@ -107,5 +107,6 @@ export const dark = {
   inputStyles: inputStyles,
   buttonStyles: buttonStyles,
   statusContainerIconColor: "#bed9bf",
+  statusContainerError : baseStatusContainerError,
   statusContainerSuccess: baseStatusContainerSuccess
 };

@@ -14,6 +14,7 @@ import {
   basePasswordIcon,
   baseStatusContainer,
   baseStatusContainerSuccess,
+  baseStatusContainerError,
 } from "./reusable";
 
 const lightCard: React.CSSProperties = {
@@ -109,6 +110,17 @@ const lightStatusContainerSuccess: React.CSSProperties = {
   backdropFilter: "blur(2px)",
 };
 
+const lightStatusContainerError: React.CSSProperties = {
+  ...baseStatusContainer,
+  background: "linear-gradient(135deg, #fdeaea 0%, #fff5f5 50%, #fdeaea 100%)",
+  border: "1px solid rgba(200, 80, 80, 0.35)",
+  boxShadow:
+    "inset 0 1px 2px rgba(255, 255, 255, 0.7), 0 0 6px rgba(200, 80, 80, 0.15)",
+  color: "rgba(160, 40, 40, 0.9)",
+  backdropFilter: "blur(2px)",
+};
+
+
 export const light = {
   submitButton: lightSubmitButton,
   card: lightCard,
@@ -125,5 +137,6 @@ export const light = {
   inputStyles: inputStyles,
   buttonStyles: buttonStyles,
   statusContainerSuccess: lightStatusContainerSuccess,
+  statusContainerError : lightStatusContainerError,
   statusContainerIconColor: "#a6dca8ff",
 };

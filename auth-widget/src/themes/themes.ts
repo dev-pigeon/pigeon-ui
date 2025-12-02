@@ -17,7 +17,8 @@ type Theme = {
   inputIcon: React.CSSProperties;
   submitButton: React.CSSProperties;
   passwordIcon: React.CSSProperties;
-  statusContainerSuccess?: React.CSSProperties;
+  statusContainerSuccess: React.CSSProperties;
+  statusContainerError: React.CSSProperties;
   inputStyles: InputStyles; 
   buttonStyles : ButtonStyles;
   statusContainerIconColor: string
