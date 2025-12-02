@@ -16,7 +16,7 @@ import {
 
 const lightCard: React.CSSProperties = {
   ...baseCard,
-  background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%)",
+  background: "linear-gradient(135deg, #ffffffff 0%, #f8fafcdd 50%, #ffffff 100%)",
   color: "#1e293b",
   boxShadow: "0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06)",
 };
@@ -43,6 +43,7 @@ const lightTabContainer: React.CSSProperties = {
 const lightTabButton: React.CSSProperties = {
   ...baseTabButton,
   color: "#64748b",
+  backgroundColor:"#ccc6e633 !important",
 };
 
 const lightSubmitButton: React.CSSProperties = {
@@ -66,6 +67,7 @@ const lightInputWithIcon: React.CSSProperties = {
   ...baseInputWithIcon,
   borderBottom: "1px solid #cbd5e1",
   color: "#0f172a",
+  backgroundColor:"#ccc6e633 !important",
 };
 
 const lightInputIcon: React.CSSProperties = {
