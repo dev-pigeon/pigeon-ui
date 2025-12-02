@@ -21,4 +21,9 @@ const StatusContainer = styled.div<{
   ${(props) => props.$status === "error" && props.$styleError}
 `;
 
+export interface StatusContainerIcon {
+  successColor: string;
+  errorColor: string;
+}
+
 export { TabContainer, Card, Container, StatusContainer };

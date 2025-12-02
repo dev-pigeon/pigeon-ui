@@ -1,5 +1,5 @@
 import React from "react";
-import type { ButtonStyles, InputStyles } from "../components";
+import type { ButtonStyles, InputStyles, StatusContainerIcon } from "../components";
 import {
   baseCard,
   baseContainer,
@@ -121,6 +121,11 @@ const lightStatusContainerError: React.CSSProperties = {
 };
 
 
+const statusContainerIcon : StatusContainerIcon = {
+  successColor: "#bed9bf",
+  errorColor: "#bed9bf"
+}
+
 export const light = {
   submitButton: lightSubmitButton,
   card: lightCard,
@@ -138,5 +143,5 @@ export const light = {
   buttonStyles: buttonStyles,
   statusContainerSuccess: lightStatusContainerSuccess,
   statusContainerError : lightStatusContainerError,
-  statusContainerIconColor: "#a6dca8ff",
+  statusContainerIcon : statusContainerIcon
 };

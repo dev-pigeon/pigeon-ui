@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { themes } from "./themes/themes";
-import { Mail, Contact, Eye, EyeOff, Check } from "lucide-react";
+import { Mail, Contact, Eye, EyeOff, Ban } from "lucide-react";
 import {
   Card,
   Container,
@@ -249,7 +249,7 @@ const AuthWidget = ({
             themeObject["statusContainerSuccess"]
           )}
         >
-          <Check color={themeObject.statusContainerIconColor} />
+          <Ban color={themeObject.statusContainerIcon.errorColor} />
           Success! Redirecting...
         </StatusContainer>
 

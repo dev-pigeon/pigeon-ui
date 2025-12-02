@@ -1,5 +1,5 @@
 import React from "react";
-import type { ButtonStyles, InputStyles } from "../components";
+import type { ButtonStyles, InputStyles, StatusContainerIcon } from "../components";
 import {
   baseCard,
   baseContainer,
@@ -104,6 +104,11 @@ const buttonStyles: ButtonStyles = {
   hoverBoxShadow: "0 6px 20px rgba(59, 130, 246, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3)",
 };
 
+const statusContainerIcon : StatusContainerIcon = {
+  successColor: "#bed9bf",
+  errorColor: "#bed9bf"
+}
+
 export const modern = {
   submitButton: submitButton,
   card: modernCard,
@@ -121,5 +126,5 @@ export const modern = {
   buttonStyles: buttonStyles,
   statusContainerSuccess : baseStatusContainerSuccess,
   statusContainerError : baseStatusContainerError,
-  statusContainerIconColor: "#bed9bf",
+  statusContainerIcon : statusContainerIcon
 };
