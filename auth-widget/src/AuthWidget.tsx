@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { themes } from "./themes/themes";
-import { Mail, Contact, Eye, EyeOff } from "lucide-react";
+import { Mail, Contact, Eye, EyeOff, Ban, Check } from "lucide-react";
 import {
   Card,
   Container,
@@ -15,12 +15,15 @@ import {
   Input,
   type InputStyles,
   type ButtonStyles,
+  StatusContainer,
 } from "./components";
+import { type AuthStatus, isAuthStatus } from "./AuthStatus";
 
 interface AuthWidgetBehaviors {
   handleUsername: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleEmail: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handlePassword: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onSubmit: () => any;
 }
 
 interface AuthWidgetState {
@@ -82,6 +85,28 @@ const AuthWidget = ({
     "login"
   );
   const [showPassword, setShowPassword] = useState(false);
+  const [authStatus, setAuthStatus] = useState<AuthStatus | null>(null);
+  const authStatusTimer = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (authStatusTimer.current) {
+        clearTimeout(authStatusTimer.current);
+      }
+    };
+  }, []);
+
+  async function submitCallbackWrapper(fn: () => any) {
+    const result = await fn();
+    if (isAuthStatus(result)) {
+      setAuthStatus(result);
+
+      authStatusTimer.current = setTimeout(() => {
+        setAuthStatus(null);
+        authStatusTimer.current = null;
+      }, result.durationMs);
+    }
+  }
 
   return (
     <Card $styleString={cssPropertiesToString(themeObject["card"])}>
@@ -239,7 +264,29 @@ const AuthWidget = ({
           </InputWrapper>
         </InputContainer>
 
+        {authStatus && (
+          <StatusContainer
+            $status={authStatus.status}
+            $styleError={cssPropertiesToString(
+              themeObject["statusContainerError"]
+            )}
+            $styleSuccess={cssPropertiesToString(
+              themeObject["statusContainerSuccess"]
+            )}
+          >
+            {authStatus.status == "error" ? (
+              <Ban color={themeObject.statusContainerIcon.errorColor} />
+            ) : (
+              <Check color={themeObject.statusContainerIcon.successColor} />
+            )}
+            {authStatus.message}
+          </StatusContainer>
+        )}
+
         <SubmitButton
+          onClick={() => {
+            submitCallbackWrapper(behavior.onSubmit);
+          }}
           $styleString={cssPropertiesToString(themeObject["submitButton"])}
           $hoverBgColor={
             styleOverrides?.button?.hoverBgColor

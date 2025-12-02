@@ -1,5 +1,5 @@
 import React from "react";
-import type { ButtonStyles, InputStyles } from "../components";
+import type { ButtonStyles, InputStyles, StatusContainerIcon } from "../components";
 import {
   baseCard,
   baseContainer,
@@ -12,6 +12,8 @@ import {
   baseInputWithIcon,
   baseInputIcon,
   basePasswordIcon,
+  baseStatusContainerSuccess,
+  baseStatusContainerError,
 } from "./reusable";
 
 const darkCard: React.CSSProperties = {
@@ -87,6 +89,12 @@ const buttonStyles: ButtonStyles = {
   hoverBoxShadow: "0 4px 12px rgba(139, 92, 246, 0.5)",
 };
 
+const statusContainerIcon : StatusContainerIcon = {
+  successColor: "#bed9bf",
+  errorColor: "rgba(200, 60, 60, .95)"
+}
+
+
 export const dark = {
   submitButton: darkSubmitButton,
   card: darkCard,
@@ -102,4 +110,7 @@ export const dark = {
   passwordIcon: darkPasswordIcon,
   inputStyles: inputStyles,
   buttonStyles: buttonStyles,
+  statusContainerIcon : statusContainerIcon,
+  statusContainerError : baseStatusContainerError,
+  statusContainerSuccess: baseStatusContainerSuccess
 };

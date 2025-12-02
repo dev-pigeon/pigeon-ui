@@ -1,5 +1,5 @@
 import React from "react";
-import type { ButtonStyles, InputStyles } from "../components";
+import type { ButtonStyles, InputStyles, StatusContainerIcon } from "../components";
 import {
   baseCard,
   baseContainer,
@@ -12,6 +12,8 @@ import {
   baseInputWithIcon,
   baseInputIcon,
   basePasswordIcon,
+  baseStatusContainerSuccess,
+  baseStatusContainerError,
 } from "./reusable";
 
 const modernCard: React.CSSProperties = {
@@ -63,7 +65,6 @@ const modernTabButtonActive: React.CSSProperties = {
   background: "linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)",
   color: "#ffffff",
   boxShadow: "0 2px 8px rgba(59, 130, 246, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2)",
-  border: "1px solid rgba(59, 130, 246, 0.6)",
 };
 
 const modernInputWrapper: React.CSSProperties = {
@@ -89,6 +90,7 @@ const modernPasswordIcon: React.CSSProperties = {
   color: "#60a5fa",
 };
 
+
 const inputStyles: InputStyles = {
   focusColor: "#3b82f6",
   placeholderColor: "#64748b",
@@ -99,6 +101,11 @@ const buttonStyles: ButtonStyles = {
   hoverBgColor: "#2563eb",
   hoverBoxShadow: "0 6px 20px rgba(59, 130, 246, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3)",
 };
+
+const statusContainerIcon : StatusContainerIcon = {
+  successColor: "#bed9bf",
+  errorColor: "rgba(200, 60, 60, .95)"
+}
 
 export const modern = {
   submitButton: submitButton,
@@ -115,4 +122,7 @@ export const modern = {
   passwordIcon: modernPasswordIcon,
   inputStyles: inputStyles,
   buttonStyles: buttonStyles,
+  statusContainerSuccess : baseStatusContainerSuccess,
+  statusContainerError : baseStatusContainerError,
+  statusContainerIcon : statusContainerIcon
 };
