@@ -17,9 +17,10 @@ type Theme = {
   inputIcon: React.CSSProperties;
   submitButton: React.CSSProperties;
   passwordIcon: React.CSSProperties;
+  statusContainerSuccess?: React.CSSProperties;
   inputStyles: InputStyles; 
-  buttonStyles : ButtonStyles
- 
+  buttonStyles : ButtonStyles;
+  statusContainerIconColor: string
 }
 
 type ThemeDict = {

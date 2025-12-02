@@ -12,6 +12,8 @@ import {
   baseInputWithIcon,
   baseInputIcon,
   basePasswordIcon,
+  baseStatusContainer,
+  baseStatusContainerSuccess,
 } from "./reusable";
 
 const modernCard: React.CSSProperties = {
@@ -89,6 +91,7 @@ const modernPasswordIcon: React.CSSProperties = {
   color: "#60a5fa",
 };
 
+
 const inputStyles: InputStyles = {
   focusColor: "#3b82f6",
   placeholderColor: "#64748b",
@@ -115,4 +118,6 @@ export const modern = {
   passwordIcon: modernPasswordIcon,
   inputStyles: inputStyles,
   buttonStyles: buttonStyles,
+  statusContainerSuccess : baseStatusContainerSuccess,
+  statusContainerIconColor: "#bed9bf",
 };

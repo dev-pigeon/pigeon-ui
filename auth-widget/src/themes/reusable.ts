@@ -122,3 +122,25 @@ export const basePasswordIcon: React.CSSProperties = {
   alignItems: "center",
   justifyContent: "center",
 };
+
+export const baseStatusContainer: React.CSSProperties = {
+  display : "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  width : '97%',
+  minHeight:'50px',
+  height : 'auto',
+  padding: "5px",
+  gap : '10px',
+  flexFlow: 'row wrap',
+}
+
+export const baseStatusContainerSuccess: React.CSSProperties = {
+  ...baseStatusContainer,
+  background: "linear-gradient(135deg, #0c1419 0%, #11231a 50%, #0c1419 100%)",
+  border: "1px solid rgba(70, 180, 120, 0.35)",
+  boxShadow:
+    "inset 0 1px 2px rgba(255, 255, 255, 0.05), 0 0 8px rgba(60, 150, 100, 0.18)",
+  color: "rgba(150, 225, 170, 0.9)",
+  backdropFilter: "blur(2px)",
+};

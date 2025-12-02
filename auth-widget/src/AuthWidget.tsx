@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { themes } from "./themes/themes";
-import { Mail, Contact, Eye, EyeOff } from "lucide-react";
+import { Mail, Contact, Eye, EyeOff, Check } from "lucide-react";
 import {
   Card,
   Container,
@@ -15,6 +15,7 @@ import {
   Input,
   type InputStyles,
   type ButtonStyles,
+  StatusContainer,
 } from "./components";
 
 interface AuthWidgetBehaviors {
@@ -238,6 +239,18 @@ const AuthWidget = ({
             />
           </InputWrapper>
         </InputContainer>
+
+        {themeObject.statusContainerSuccess && (
+          <StatusContainer
+            $status="success"
+            $styleSuccess={cssPropertiesToString(
+              themeObject["statusContainerSuccess"]
+            )}
+          >
+            <Check color={themeObject.statusContainerIconColor} />
+            Success! Redirecting...
+          </StatusContainer>
+        )}
 
         <SubmitButton
           $styleString={cssPropertiesToString(themeObject["submitButton"])}

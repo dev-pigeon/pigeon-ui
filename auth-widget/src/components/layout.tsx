@@ -12,4 +12,11 @@ const TabContainer = styled.div<{ $styleString: string }>`
   ${(props) => props.$styleString}
 `;
 
-export { TabContainer, Card, Container };
+const StatusContainer = styled.div<{
+  $styleSuccess: string;
+  $status: "success" | "error";
+}>`
+  ${(props) => props.$status === "success" && props.$styleSuccess}
+`;
+
+export { TabContainer, Card, Container, StatusContainer };
