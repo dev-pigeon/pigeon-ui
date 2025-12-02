@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import AuthWidget from "./AuthWidget";
+import { getRequestObject } from "./Api";
 
 const ThemeSelector = ({
   currentTheme,
