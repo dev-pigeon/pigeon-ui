@@ -13,8 +13,6 @@ import {
   baseInputIcon,
   basePasswordIcon,
   baseStatusContainer,
-  baseStatusContainerSuccess,
-  baseStatusContainerError,
 } from "./reusable";
 
 const lightCard: React.CSSProperties = {
@@ -83,12 +81,6 @@ const lightPasswordIcon: React.CSSProperties = {
   color: "#64748b",
 };
 
-const lightStatucContainerSuccess : React.CSSProperties = {
-  ...baseStatusContainer,
-  color: "#e4eee5ff",
-  backgroundColor: "#357a3fff",
-}
-
 const inputStyles: InputStyles = {
   focusColor: "#1e293b",
   placeholderColor: "#94a3b8",
@@ -122,8 +114,8 @@ const lightStatusContainerError: React.CSSProperties = {
 
 
 const statusContainerIcon : StatusContainerIcon = {
-  successColor: "#bed9bf",
-  errorColor: "#bed9bf"
+  successColor: "#5f9061d2",
+  errorColor: "rgba(160, 40, 40, 0.9)"
 }
 
 export const light = {

@@ -12,7 +12,6 @@ import {
   baseInputWithIcon,
   baseInputIcon,
   basePasswordIcon,
-  baseStatusContainer,
   baseStatusContainerSuccess,
   baseStatusContainerError,
 } from "./reusable";
@@ -66,7 +65,6 @@ const modernTabButtonActive: React.CSSProperties = {
   background: "linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)",
   color: "#ffffff",
   boxShadow: "0 2px 8px rgba(59, 130, 246, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2)",
-  border: "1px solid rgba(59, 130, 246, 0.6)",
 };
 
 const modernInputWrapper: React.CSSProperties = {
@@ -106,7 +104,7 @@ const buttonStyles: ButtonStyles = {
 
 const statusContainerIcon : StatusContainerIcon = {
   successColor: "#bed9bf",
-  errorColor: "#bed9bf"
+  errorColor: "rgba(200, 60, 60, .95)"
 }
 
 export const modern = {

@@ -12,7 +12,6 @@ import {
   baseInputWithIcon,
   baseInputIcon,
   basePasswordIcon,
-  baseStatusContainer,
   baseStatusContainerSuccess,
   baseStatusContainerError,
 } from "./reusable";
@@ -92,10 +91,8 @@ const buttonStyles: ButtonStyles = {
 
 const statusContainerIcon : StatusContainerIcon = {
   successColor: "#bed9bf",
-  errorColor: "#bed9bf"
+  errorColor: "rgba(200, 60, 60, .95)"
 }
-
-
 
 
 export const dark = {
