@@ -96,8 +96,8 @@ const AuthWidget = ({
     };
   }, []);
 
-  function submitCallbackWrapper(fn: () => any) {
-    const result = fn();
+  async function submitCallbackWrapper(fn: () => any) {
+    const result = await fn();
     if (isAuthStatus(result)) {
       setAuthStatus(result);
 

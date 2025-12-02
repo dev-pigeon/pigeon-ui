@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./App.css";
 import AuthWidget from "./AuthWidget";
-import type { AuthStatus } from "./AuthStatus";
 
 const ThemeSelector = ({
   currentTheme,
