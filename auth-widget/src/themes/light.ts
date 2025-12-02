@@ -1,5 +1,5 @@
 import React from "react";
-import type { ButtonStyles, InputStyles } from "../components";
+import type { ButtonStyles, InputStyles, StatusContainerIcon } from "../components";
 import {
   baseCard,
   baseContainer,
@@ -12,6 +12,7 @@ import {
   baseInputWithIcon,
   baseInputIcon,
   basePasswordIcon,
+  baseStatusContainer,
 } from "./reusable";
 
 const lightCard: React.CSSProperties = {
@@ -91,6 +92,32 @@ const buttonStyles: ButtonStyles = {
   hoverBoxShadow: "0 4px 12px rgba(15, 23, 42, 0.25)",
 };
 
+const lightStatusContainerSuccess: React.CSSProperties = {
+  ...baseStatusContainer,
+  background: "linear-gradient(135deg, #e7f7ec 0%, #f2fff6 50%, #e7f7ec 100%)",
+  border: "1px solid rgba(40, 150, 90, 0.35)",
+  boxShadow:
+    "inset 0 1px 2px rgba(255, 255, 255, 0.7), 0 0 6px rgba(40, 150, 90, 0.15)",
+  color: "rgba(30, 120, 70, 0.9)",
+  backdropFilter: "blur(2px)",
+};
+
+const lightStatusContainerError: React.CSSProperties = {
+  ...baseStatusContainer,
+  background: "linear-gradient(135deg, #fdeaea 0%, #fff5f5 50%, #fdeaea 100%)",
+  border: "1px solid rgba(200, 80, 80, 0.35)",
+  boxShadow:
+    "inset 0 1px 2px rgba(255, 255, 255, 0.7), 0 0 6px rgba(200, 80, 80, 0.15)",
+  color: "rgba(160, 40, 40, 0.9)",
+  backdropFilter: "blur(2px)",
+};
+
+
+const statusContainerIcon : StatusContainerIcon = {
+  successColor: "#5f9061d2",
+  errorColor: "rgba(160, 40, 40, 0.9)"
+}
+
 export const light = {
   submitButton: lightSubmitButton,
   card: lightCard,
@@ -106,4 +133,7 @@ export const light = {
   passwordIcon: lightPasswordIcon,
   inputStyles: inputStyles,
   buttonStyles: buttonStyles,
+  statusContainerSuccess: lightStatusContainerSuccess,
+  statusContainerError : lightStatusContainerError,
+  statusContainerIcon : statusContainerIcon
 };

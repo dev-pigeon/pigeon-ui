@@ -2,7 +2,7 @@ import type React from "react"
 import { modern } from "./modern"
 import { dark } from "./dark"
 import { light } from "./light"
-import type { ButtonStyles, InputStyles } from "../components"
+import type { ButtonStyles, InputStyles, StatusContainerIcon } from "../components"
 
 type Theme = {
   card: React.CSSProperties;
@@ -17,9 +17,11 @@ type Theme = {
   inputIcon: React.CSSProperties;
   submitButton: React.CSSProperties;
   passwordIcon: React.CSSProperties;
+  statusContainerSuccess: React.CSSProperties;
+  statusContainerError: React.CSSProperties;
   inputStyles: InputStyles; 
-  buttonStyles : ButtonStyles
- 
+  buttonStyles : ButtonStyles;
+  statusContainerIcon : StatusContainerIcon 
 }
 
 type ThemeDict = {
