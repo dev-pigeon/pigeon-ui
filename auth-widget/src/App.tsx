@@ -80,7 +80,23 @@ function App() {
     }
   };
 
-  const onSubmit = (): any => {
+  const onSignup = (): any => {
+    if (theme == "dark") {
+      return {
+        message: "Login success! Redirecting...",
+        status: "success",
+        durationMs: 2000,
+      };
+    }
+
+    return {
+      message: "Error: Please a valid email.",
+      status: "error",
+      durationMs: 2000,
+    };
+  };
+
+  const onLogin = (): any => {
     if (theme == "dark") {
       return {
         message: "Login success! Redirecting...",
@@ -111,7 +127,13 @@ function App() {
 
       <AuthWidget
         theme={theme}
-        behavior={{ handleEmail, handleUsername, handlePassword, onSubmit }}
+        behavior={{
+          handleEmail,
+          handleUsername,
+          handlePassword,
+          onLogin,
+          onSignup,
+        }}
         state={{ username, email, password }}
       />
     </div>
