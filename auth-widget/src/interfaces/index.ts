@@ -2,7 +2,8 @@ export interface AuthWidgetBehaviors {
   handleUsername: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleEmail: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handlePassword: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onSubmit: () => any;
+  onLogin:() => any;
+  onSignup:() => any;
 }
 
 export interface AuthWidgetState {

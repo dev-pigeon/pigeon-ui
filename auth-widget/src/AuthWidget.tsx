@@ -213,7 +213,9 @@ const AuthWidget = ({
 
         <SubmitButton
           onClick={() => {
-            authStatusHook.submitCallbackWrapper(behavior.onSubmit);
+            activeMode == "login"
+              ? authStatusHook.submitCallbackWrapper(behavior.onLogin)
+              : authStatusHook.submitCallbackWrapper(behavior.onSignup);
           }}
           $styleString={cssPropertiesToString(themeObject["submitButton"])}
           $hoverBgColor={

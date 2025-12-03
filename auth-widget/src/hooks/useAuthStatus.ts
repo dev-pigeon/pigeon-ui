@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-type AuthStatus = {
+export type AuthStatus = {
     status : 'success' | 'error',
     message : string,
     durationMs : number
@@ -32,11 +32,11 @@ function useAuthStatus() : authStatusReturn {
             clearTimeout(authStatusTimer.current);
         }
         };
-    }, []);
+    }, []); 
 
     async function submitCallbackWrapper(fn: () => any) {
         const result = await fn();
-        if (isAuthStatus(result)) {
+        if (result != undefined && isAuthStatus(result)) {
         setAuthStatus(result);
 
         authStatusTimer.current = setTimeout(() => {
