@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 import AuthWidget from "./AuthWidget";
+import { getRequestObject, makeRequest } from "./Api";
+import { type AuthStatus } from "./hooks/useAuthStatus";
 
 const ThemeSelector = ({
   currentTheme,
@@ -79,20 +81,75 @@ function App() {
     }
   };
 
-  const onSubmit = (): any => {
-    if (theme == "dark") {
-      return {
-        message: "Login success! Redirecting...",
-        status: "success",
-        durationMs: 2000,
-      };
-    }
-
+  const getData = (): object => {
     return {
-      message: "Error: Please a valid email.",
-      status: "error",
-      durationMs: 2000,
+      username: username,
+      email: email,
+      password: password,
     };
+  };
+
+  const packageAuthMessage = (
+    status: "success" | "error",
+    message: string,
+    duration: number
+  ) => {
+    const error: AuthStatus = {
+      status: status,
+      message: message,
+      durationMs: duration,
+    };
+    return error;
+  };
+
+  const onSignup = async (): Promise<any> => {
+    try {
+      const data = getData();
+      const request = getRequestObject("POST", data);
+      const response = await makeRequest(
+        request,
+        "http://localhost:5335/api/register"
+      );
+
+      // kick off some business logic, set a timeout, route to a new page
+      return packageAuthMessage(
+        "success",
+        "Account created successfully!",
+        3000
+      );
+    } catch (error) {
+      if (error instanceof Error) {
+        const message = packageAuthMessage("error", error.message, 3000);
+        return message;
+      }
+    }
+  };
+
+  const onLogin = async (): Promise<any> => {
+    try {
+      const data = getData();
+      const request = getRequestObject("POST", data);
+      const response = await makeRequest(
+        request,
+        "http://localhost:5335/api/login"
+      );
+
+      if (!response.ok) {
+        const message = packageAuthMessage(
+          "error",
+          "An unexpected error has occured",
+          3000
+        );
+        return message;
+      }
+
+      return packageAuthMessage("success", "Login successful!", 3000);
+    } catch (error) {
+      if (error instanceof Error) {
+        const message = packageAuthMessage("error", error.message, 3000);
+        return message;
+      }
+    }
   };
 
   return (
@@ -110,7 +167,13 @@ function App() {
 
       <AuthWidget
         theme={theme}
-        behavior={{ handleEmail, handleUsername, handlePassword, onSubmit }}
+        behavior={{
+          handleEmail,
+          handleUsername,
+          handlePassword,
+          onLogin,
+          onSignup,
+        }}
         state={{ username, email, password }}
       />
     </div>
