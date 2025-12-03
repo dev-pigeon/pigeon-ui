@@ -3,7 +3,7 @@
 function getRequestObject(method: 'GET' | "POST" | "PUT" | "DELETE", payload?:object,) {
     const request = {
         method : method,
-        header: {
+        headers: {
             'content-type' : "application/json",
         },
         body: payload ? JSON.stringify(payload) : null
@@ -14,8 +14,9 @@ function getRequestObject(method: 'GET' | "POST" | "PUT" | "DELETE", payload?:ob
 
 async function makeRequest(requestObject : object, URL : string) {
     const response = await fetch(URL, requestObject);
+    const jsonResponse = await response.json();
     if(!response.ok) {
-        throw new Error("An error has occured");
+        throw new Error(jsonResponse['error']);
     }
     return response;
 }
