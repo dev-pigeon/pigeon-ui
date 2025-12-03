@@ -106,6 +106,7 @@ function App() {
     try {
       const data = getData();
       const request = getRequestObject("POST", data);
+      // @ts-ignore
       const response = await makeRequest(
         request,
         "http://localhost:5335/api/register"
