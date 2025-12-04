@@ -7,10 +7,27 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+**/node_modules
+
+# Build outputs
 dist
 dist-ssr
+**/dist
+**/dist-ssr
+
+# Temporary files
 *.local
+*.tmp
+.tmp/
+*.tsbuildinfo
+**/node_modules/.tmp
+
+# Environment
+.env
+.env.local
+.env.*.local
 
 # Editor directories and files
 .vscode/*

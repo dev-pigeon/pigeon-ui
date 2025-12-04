@@ -1,33 +1,31 @@
 {
-  "name": "auth-widget",
+  "name": "@pigeon-ui/monorepo",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
+  "workspaces": [
+    "packages/*",
+    "demo/*"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "lucide-react": "^0.555.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "styled-components": "^6.1.19"
+    "dev": "npm run dev -w demo/authwidget",
+    "dev:lib": "npm run dev -w packages/authwidget",
+    "build": "npm run build -w packages/authwidget && npm run build -w demo/authwidget",
+    "build:lib": "npm run build -w packages/authwidget",
+    "build:demo": "npm run build -w demo/authwidget",
+    "lint": "npm run lint --workspaces --if-present",
+    "lint:lib": "npm run lint -w packages/authwidget",
+    "lint:demo": "npm run lint -w demo/authwidget",
+    "clean": "npm run clean --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "preview:demo": "npm run preview -w demo/authwidget"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
     "@types/node": "^24.10.1",
-    "@types/react": "^19.2.5",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.1",
-    "babel-plugin-react-compiler": "^1.0.0",
-    "eslint": "^9.39.1",
-    "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.4.24",
-    "globals": "^16.5.0",
-    "typescript": "~5.9.3",
-    "typescript-eslint": "^8.46.4",
-    "vite": "^7.2.4"
+    "typescript": "~5.9.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }

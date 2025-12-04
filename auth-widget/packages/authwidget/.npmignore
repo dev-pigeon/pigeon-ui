@@ -1,0 +1,28 @@
+# Source files
+src/
+*.ts
+*.tsx
+!*.d.ts
+
+# Config files
+tsconfig.json
+tsconfig.build.json
+vite.config.ts
+eslint.config.js
+
+# Development
+node_modules/
+.vscode/
+.idea/
+*.log
+.DS_Store
+
+# Build artifacts
+*.tsbuildinfo
+.tmp/
+
+# Testing
+*.test.*
+*.spec.*
+__tests__/
+coverage/
