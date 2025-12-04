@@ -1,5 +1,5 @@
 import "./App.css";
-import AuthWidget from "./AuthWidget";
+import { AuthWidget } from "@pigeon-ui/auth-widget";
 import { useAuthWidget } from "./hooks/useAuthWidget";
 import ThemeSelector from "./ThemeSelector";
 
