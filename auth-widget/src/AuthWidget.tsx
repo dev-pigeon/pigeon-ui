@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { themes } from "./themes/themes";
-import { Mail, Contact, Eye, EyeOff, Ban, Check } from "lucide-react";
+import { Mail, Contact, Eye, EyeOff, BadgeCheck, BadgeX } from "lucide-react";
 import {
   Card,
   Container,
@@ -203,9 +203,11 @@ const AuthWidget = ({
             )}
           >
             {authStatusHook.authStatus.status == "error" ? (
-              <Ban color={themeObject.statusContainerIcon.errorColor} />
+              <BadgeX color={themeObject.statusContainerIcon.errorColor} />
             ) : (
-              <Check color={themeObject.statusContainerIcon.successColor} />
+              <BadgeCheck
+                color={themeObject.statusContainerIcon.successColor}
+              />
             )}
             {authStatusHook.authStatus.message}
           </StatusContainer>
