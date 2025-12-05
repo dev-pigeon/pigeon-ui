@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "npm run dev -w demo/authwidget",
     "dev:lib": "npm run dev -w packages/authwidget",
+    "dev:check": "npm run dev -w packages/authwidget & npm run dev -w demo/authwidget",
     "build": "npm run build -w packages/authwidget && npm run build -w demo/authwidget",
     "build:lib": "npm run build -w packages/authwidget",
     "build:demo": "npm run build -w demo/authwidget",
