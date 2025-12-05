@@ -1,11 +1,11 @@
-# @pigeon-ui/auth-widget
+# pigeon-ui
 
 A customizable, themeable authentication widget for React applications.
 
 ## Installation
 
 ```bash
-npm install @pigeon-ui/auth-widget
+npm install pigeon-ui
 ```
 
 ## Peer Dependencies
@@ -19,29 +19,29 @@ npm install react react-dom
 ## Usage
 
 ```tsx
-import { AuthWidget, useAuthStatus } from '@pigeon-ui/auth-widget';
-import { useState } from 'react';
+import { AuthWidget } from "pigeon-ui";
+import { useState } from "react";
 
 function App() {
-  const [email, setEmail] = useState('');
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = async () => {
     // Your login logic
     return {
-      status: 'success',
-      message: 'Login successful!',
-      durationMs: 3000
+      status: "success",
+      message: "Login successful!",
+      durationMs: 3000,
     };
   };
 
   const handleSignup = async () => {
     // Your signup logic
     return {
-      status: 'success',
-      message: 'Account created!',
-      durationMs: 3000
+      status: "success",
+      message: "Account created!",
+      durationMs: 3000,
     };
   };
 
@@ -68,7 +68,6 @@ function App() {
 ## Features
 
 - Three built-in themes: modern, light, dark
-- Fully customizable styles via `styleOverrides` prop
 - TypeScript support with full type definitions
 - Lightweight with tree-shaking support
 - Zero configuration required
@@ -89,16 +88,92 @@ interface AuthWidgetProps {
 }
 ```
 
-### Behavior Callbacks
-
-Your `onLogin` and `onSignup` functions should return an `AuthStatus` object:
+### AuthWidgetBehaviors
 
 ```typescript
-{
-  status: 'success' | 'error',
-  message: string,
-  durationMs: number
+interface AuthWidgetBehaviors {
+  handleUsername: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleEmail: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handlePassword: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onLogin: () => any;
+  onSignup: () => any;
 }
+```
+
+### AuthWidgetState
+
+```typescript
+interface AuthWidgetState {
+  username: string;
+  email: string;
+  password: string;
+}
+```
+
+### StyleOverrides
+
+```typescript
+interface StyleOverrides {
+  input?: InputStyleOverride;
+  button?: ButtonStyleOverride;
+}
+
+interface InputStyleOverride {
+  sx?: React.CSSProperties;
+  focusColor?: string;
+  shadowColor?: string;
+  placeholderColor?: string;
+}
+
+interface ButtonStyleOverride {
+  sx?: React.CSSProperties;
+  hoverBgColor?: string;
+  hoverBoxShadow?: string;
+}
+```
+
+### AuthStatus (Optional Return Type)
+
+The `onLogin` and `onSignup` callbacks can **optionally** return an `AuthStatus` object to display feedback messages to the user. The widget has a built-in wrapper function that uses a type guard to detect `AuthStatus` return values, extract the message, and display it temporarily.
+
+If you want the widget to display a message to the user (e.g., login error, success notification), simply return an `AuthStatus` object from your callback.
+
+```typescript
+interface AuthStatus {
+  status: "success" | "error";
+  message: string;
+  durationMs: number;
+}
+```
+
+**Example with status feedback:**
+
+```typescript
+const handleLogin = async () => {
+  try {
+    await api.login(email, password);
+    return {
+      status: "success",
+      message: "Login successful!",
+      durationMs: 3000,
+    };
+  } catch (error) {
+    return {
+      status: "error",
+      message: "Invalid credentials",
+      durationMs: 5000,
+    };
+  }
+};
+```
+
+**Example without status feedback (no return value):**
+
+```typescript
+const handleLogin = async () => {
+  await api.login(email, password);
+  // No return - widget won't display any status message
+};
 ```
 
 ## License

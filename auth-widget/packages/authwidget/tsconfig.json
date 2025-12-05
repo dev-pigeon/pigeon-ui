@@ -27,7 +27,7 @@
     /* Path Mapping (for development) */
     "baseUrl": ".",
     "paths": {
-      "@pigeon-ui/auth-widget": ["./src"]
+      "pigeon-ui": ["./src"]
     }
   },
   "include": ["src/**/*"],

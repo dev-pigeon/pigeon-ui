@@ -13,11 +13,11 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@pigeon-ui/auth-widget': resolve(__dirname, '../../packages/authwidget/src'),
+      'pigeon-ui': resolve(__dirname, '../../packages/authwidget/src'),
     },
   },
   optimizeDeps: {
-    exclude: ['@pigeon-ui/auth-widget'],
+    exclude: ['pigeon-ui'],
   },
   server: {
     watch: {

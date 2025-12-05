@@ -1,6 +1,6 @@
 import  { useState } from "react";
 import { getRequestObject, makeRequest } from "../Api";
-import type { AuthStatus } from "@pigeon-ui/auth-widget";
+import type { AuthStatus } from "pigeon-ui";
 
 interface UseAuthWidget {
   theme: "modern" | "dark" | "light";
