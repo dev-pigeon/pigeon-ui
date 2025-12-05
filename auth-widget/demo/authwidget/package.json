@@ -13,11 +13,11 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "pigeon-ui": "*",
+    "lucide-react": "^0.555.0",
+    "pigeon-ui": "^0.1.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "styled-components": "^6.1.19",
-    "lucide-react": "^0.555.0"
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
