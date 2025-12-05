@@ -16,6 +16,14 @@ export default defineConfig({
       '@pigeon-ui/auth-widget': resolve(__dirname, '../../packages/authwidget/src'),
     },
   },
+  optimizeDeps: {
+    exclude: ['@pigeon-ui/auth-widget'],
+  },
+  server: {
+    watch: {
+      ignored: ['!**/packages/authwidget/src/**'],
+    },
+  },
   build: {
     outDir: 'dist',
     sourcemap: true,
