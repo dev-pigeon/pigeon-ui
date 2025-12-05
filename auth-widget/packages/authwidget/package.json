@@ -20,7 +20,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "dev": "vite build --watch --mode development",
+    "dev": "tsc --noEmit --watch -p tsconfig.json",
     "build": "tsc -p tsconfig.build.json && vite build",
     "clean": "rm -rf dist",
     "lint": "eslint .",
