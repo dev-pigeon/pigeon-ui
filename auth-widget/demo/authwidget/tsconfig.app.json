@@ -30,7 +30,7 @@
     /* Path Mapping */
     "baseUrl": ".",
     "paths": {
-      "@pigeon-ui/auth-widget": ["../../packages/authwidget/src"]
+      "pigeon-ui": ["../../packages/authwidget/src"]
     }
   },
   "include": ["src"]
