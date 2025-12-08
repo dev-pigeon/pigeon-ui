@@ -24,6 +24,21 @@ npm install react react-dom
 - Zero configuration required
 - Built with styled-components and React 19
 
+## Examples
+
+<table>
+  <tr>
+    <td align="center"><b>Modern</b></td>
+    <td align="center"><b>Dark</b></td>
+    <td align="center"><b>Light</b></td>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/dev-pigeon/pigeon-ui/main/demo/assets/AuthWidgetModern.png" width="250" height="250"></td>
+    <td><img src="https://raw.githubusercontent.com/dev-pigeon/pigeon-ui/main/demo/assets/AuthWidgetDark.png" width="250" height="250"></td>
+    <td><img src="https://raw.githubusercontent.com/dev-pigeon/pigeon-ui/main/demo/assets/AuthWidgetLight.png" width="250" height="250"></td>
+  </tr>
+</table>
+
 ## Usage
 
 ```tsx
