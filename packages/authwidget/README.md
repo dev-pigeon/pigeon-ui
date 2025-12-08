@@ -26,17 +26,20 @@ npm install react react-dom
 
 ## Examples
 
-### Modern
-
-<img src="https://raw.githubusercontent.com/dev-pigeon/pigeon-ui/auth-widget-theme-examples/demo/assets/AuthWidgetModern.png" width="300" height="300">
-
-### Dark
-
-<img src="https://raw.githubusercontent.com/dev-pigeon/pigeon-ui/auth-widget-theme-examples/demo/assets/AuthWidgetDark.png" width="300" height="300">
-
-### Light
-
-<img src="https://raw.githubusercontent.com/dev-pigeon/pigeon-ui/auth-widget-theme-examples/demo/assets/AuthWidgetLight.png" width="300" height="300">
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-start;">
+  <div style="text-align: center;">
+    <h3>Modern</h3>
+    <img src="https://raw.githubusercontent.com/dev-pigeon/pigeon-ui/auth-widget-theme-examples/demo/assets/AuthWidgetModern.png" width="300" height="300">
+  </div>
+  <div style="text-align: center;">
+    <h3>Dark</h3>
+    <img src="https://raw.githubusercontent.com/dev-pigeon/pigeon-ui/auth-widget-theme-examples/demo/assets/AuthWidgetDark.png" width="300" height="300">
+  </div>
+  <div style="text-align: center;">
+    <h3>Light</h3>
+    <img src="https://raw.githubusercontent.com/dev-pigeon/pigeon-ui/auth-widget-theme-examples/demo/assets/AuthWidgetLight.png" width="300" height="300">
+  </div>
+</div>
 
 ## Usage
 
