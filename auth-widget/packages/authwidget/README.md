@@ -1,6 +1,6 @@
 # pigeon-ui
 
-A customizable, themeable authentication widget for React applications.
+A customizable, themeable authentication widget for modern React applications.
 
 ## Installation
 
@@ -15,6 +15,14 @@ This package requires the following peer dependencies:
 ```bash
 npm install react react-dom
 ```
+
+## Features
+
+- Three built-in themes: modern, light, dark
+- TypeScript support with full type definitions
+- Lightweight with tree-shaking support
+- Zero configuration required
+- Built with styled-components and React 19
 
 ## Usage
 
@@ -64,14 +72,6 @@ function App() {
   );
 }
 ```
-
-## Features
-
-- Three built-in themes: modern, light, dark
-- TypeScript support with full type definitions
-- Lightweight with tree-shaking support
-- Zero configuration required
-- Built with styled-components and React 19
 
 ## API
 
