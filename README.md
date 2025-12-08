@@ -1,6 +1,23 @@
 # pigeon-ui
 
-A collection of themeable, customizable React UI components for modern web applications.
+A customizable, themeable authentication widget for modern React applications.
+
+## Installation
+
+```bash
+npm install pigeon-ui
+```
+
+## Peer Dependencies
+
+This package requires the following peer dependencies:
+
+- React
+- React-dom
+
+```bash
+npm install react react-dom
+```
 
 ## Packages
 
