@@ -33,9 +33,9 @@ npm install react react-dom
     <td align="center"><b>Light</b></td>
   </tr>
   <tr>
-    <td><img src="https://raw.githubusercontent.com/dev-pigeon/pigeon-ui/auth-widget-theme-examples/demo/assets/AuthWidgetModern.png" width="250" height="250"></td>
-    <td><img src="https://raw.githubusercontent.com/dev-pigeon/pigeon-ui/auth-widget-theme-examples/demo/assets/AuthWidgetDark.png" width="250" height="250"></td>
-    <td><img src="https://raw.githubusercontent.com/dev-pigeon/pigeon-ui/auth-widget-theme-examples/demo/assets/AuthWidgetLight.png" width="250" height="250"></td>
+    <td><img src="https://raw.githubusercontent.com/dev-pigeon/pigeon-ui/main/demo/assets/AuthWidgetModern.png" width="250" height="250"></td>
+    <td><img src="https://raw.githubusercontent.com/dev-pigeon/pigeon-ui/main/demo/assets/AuthWidgetDark.png" width="250" height="250"></td>
+    <td><img src="https://raw.githubusercontent.com/dev-pigeon/pigeon-ui/main/demo/assets/AuthWidgetLight.png" width="250" height="250"></td>
   </tr>
 </table>
 
