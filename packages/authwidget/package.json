@@ -1,6 +1,6 @@
 {
   "name": "pigeon-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A customizable, themeable authentication widget for React applications",
   "type": "module",
   "main": "./dist/index.js",
